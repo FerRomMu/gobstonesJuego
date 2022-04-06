@@ -1,0 +1,10244 @@
+name: Calabozo Infinito
+rules:
+  - text: " "
+    when:
+      blue: 0
+      black: 7
+      red: 0
+      green: 0
+      image: null
+    image: null
+  - image: PjEste.gif
+    when:
+      blue: '*'
+      black: 1
+      red: '*'
+      green: 1
+  - image: PjNorte.gif
+    when:
+      blue: '*'
+      black: 1
+      red: '*'
+      green: 0
+  - image: PjSur.gif
+    when:
+      blue: '*'
+      black: 1
+      red: '*'
+      green: 2
+  - image: PjOeste.gif
+    when:
+      blue: '*'
+      black: 1
+      red: '*'
+      green: 3
+  - image: Thief.gif
+    when:
+      blue: 9
+      black: 5
+      red: '*'
+      green: '*'
+  - image: Monje.gif
+    when:
+      blue: 10
+      black: 5
+      red: '*'
+      green: '*'
+  - image: Warlock.gif
+    when:
+      blue: 11
+      black: 5
+      red: '*'
+      green: '*'
+  - image: Mago.gif
+    when:
+      blue: 12
+      black: 5
+      red: '*'
+      green: '*'
+  - text: 'Null'
+    when:
+      blue: 1
+      black: 0
+      red: 0
+      green: 0
+      image: null
+    image: null
+  - image: Msj1.jpg
+    when:
+      blue: 0
+      black: 0
+      red: 1
+      green: 0
+  - image: Msj2.jpg
+    when:
+      blue: 0
+      black: 0
+      red: 2
+      green: 0
+  - image: Msj3.jpg
+    when:
+      blue: 0
+      black: 0
+      red: 3
+      green: 0
+  - image: Msj4.jpg
+    when:
+      blue: 0
+      black: 0
+      red: 4
+      green: 0
+  - image: Msj5.jpg
+    when:
+      blue: 0
+      black: 0
+      red: 5
+      green: 0
+  - image: Msj6.jpg
+    when:
+      blue: 0
+      black: 0
+      red: 6
+      green: 0
+  - image: Msj7.jpg
+    when:
+      blue: 0
+      black: 0
+      red: 7
+      green: 0
+  - image: Msj8.jpg
+    when:
+      blue: 0
+      black: 0
+      red: 8
+      green: 0
+  - image: Msj9.jpg
+    when:
+      blue: 0
+      black: 0
+      red: 9
+      green: 0
+  - image: Msj10.jpg
+    when:
+      blue: 0
+      black: 0
+      red: 10
+      green: 0
+  - image: Msj11.jpg
+    when:
+      blue: 0
+      black: 0
+      red: 11
+      green: 0
+  - image: Msj12.jpg
+    when:
+      blue: 0
+      black: 0
+      red: 12
+      green: 0
+  - image: Msj13.jpg
+    when:
+      blue: 0
+      black: 0
+      red: 13
+      green: 0
+  - image: Msj14.jpg
+    when:
+      blue: 0
+      black: 0
+      red: 14
+      green: 0
+  - image: Msj15.jpg
+    when:
+      blue: 0
+      black: 0
+      red: 15
+      green: 0
+  - image: Est1.jpg
+    when:
+      blue: 2
+      black: 0
+      red: 0
+      green: 0
+  - image: Est2.jpg
+    when:
+      blue: 3
+      black: 0
+      red: 0
+      green: 0
+  - image: Est3.jpg
+    when:
+      blue: 4
+      black: 0
+      red: 0
+      green: 0
+  - image: Est4.jpg
+    when:
+      blue: 5
+      black: 0
+      red: 0
+      green: 0
+  - image: Est5.jpg
+    when:
+      blue: 6
+      black: 0
+      red: 0
+      green: 0
+  - image: Est6.jpg
+    when:
+      blue: 7
+      black: 0
+      red: 0
+      green: 0
+  - image: Est7.jpg
+    when:
+      blue: 8
+      black: 0
+      red: 0
+      green: 0
+  - image: Est8.jpg
+    when:
+      blue: 9
+      black: 0
+      red: 0
+      green: 0
+  - image: Est9.jpg
+    when:
+      blue: 10
+      black: 0
+      red: 0
+      green: 0
+  - image: Est10.jpg
+    when:
+      blue: 11
+      black: 0
+      red: 0
+      green: 0
+  - image: Est11.jpg
+    when:
+      blue: 12
+      black: 0
+      red: 0
+      green: 0
+  - image: Est12.jpg
+    when:
+      blue: 13
+      black: 0
+      red: 0
+      green: 0
+  - image: Est13.jpg
+    when:
+      blue: 14
+      black: 0
+      red: 0
+      green: 0
+  - image: Est14.jpg
+    when:
+      blue: 15
+      black: 0
+      red: 0
+      green: 0
+  - image: Est15.jpg
+    when:
+      blue: 16
+      black: 0
+      red: 0
+      green: 0
+  - image: helado.jpg
+    when:
+      blue: 17
+      black: 2
+      red: '*'
+      green: '*'
+  - image: Nova.png
+    when:
+      blue: 16
+      black: 2
+      red: '*'
+      green: '*'
+  - image: Hongo6.gif
+    when:
+      blue: 1
+      black: 2
+      red: 6
+      green: '*'
+  - image: Hongo5.gif
+    when:
+      blue: 1
+      black: 2
+      red: 5
+      green: '*'
+  - image: Hongo4.gif
+    when:
+      blue: 1
+      black: 2
+      red: 4
+      green: '*'
+  - image: Hongo3.gif
+    when:
+      blue: 1
+      black: 2
+      red: 3
+      green: '*'
+  - image: Hongo2.gif
+    when:
+      blue: 1
+      black: 2
+      red: 2
+      green: '*'
+  - image: Hongo1.gif
+    when:
+      blue: 1
+      black: 2
+      red: 1
+      green: '*'
+  - image: Hongo0.gif
+    when:
+      blue: 1
+      black: 2
+      red: 0
+      green: '*'
+  - image: Brujo5.gif
+    when:
+      blue: 2
+      black: 2
+      red: 5
+      green: '*'
+  - image: Brujo4.gif
+    when:
+      blue: 2
+      black: 2
+      red: 4
+      green: '*'
+  - image: Brujo3.gif
+    when:
+      blue: 2
+      black: 2
+      red: 3
+      green: '*'
+  - image: Brujo2.gif
+    when:
+      blue: 2
+      black: 2
+      red: 2
+      green: '*'
+  - image: Brujo1.gif
+    when:
+      blue: 2
+      black: 2
+      red: 1
+      green: '*'
+  - image: Brujo0.gif
+    when:
+      blue: 2
+      black: 2
+      red: 0
+      green: '*'
+  - image: Transformar.jpg
+    when:
+      blue: 18
+      black: 2
+      red: 1
+      green: '*'
+  - image: Transformar.jpg
+    when:
+      blue: 18
+      black: 2
+      red: 0
+      green: '*'
+  - image: Goblin6.gif
+    when:
+      blue: 0
+      black: 2
+      red: 6
+      green: '*'
+  - image: Goblin5.gif
+    when:
+      blue: 0
+      black: 2
+      red: 5
+      green: '*'
+  - image: Goblin4.gif
+    when:
+      blue: 0
+      black: 2
+      red: 4
+      green: '*'
+  - image: Goblin3.gif
+    when:
+      blue: 0
+      black: 2
+      red: 3
+      green: '*'
+  - image: Goblin2.gif
+    when:
+      blue: 0
+      black: 2
+      red: 2
+      green: '*'
+  - image: Goblin1.gif
+    when:
+      blue: 0
+      black: 2
+      red: 1
+      green: '*'
+  - image: Goblin0.gif
+    when:
+      blue: 0
+      black: 2
+      red: 0
+      green: '*'
+  - image: Ojo6.gif
+    when:
+      blue: 5
+      black: 2
+      red: 6
+      green: '*'
+  - image: Ojo5.gif
+    when:
+      blue: 5
+      black: 2
+      red: 5
+      green: '*'
+  - image: Ojo4.gif
+    when:
+      blue: 5
+      black: 2
+      red: 4
+      green: '*'
+  - image: Ojo3.gif
+    when:
+      blue: 5
+      black: 2
+      red: 3
+      green: '*'
+  - image: Ojo2.gif
+    when:
+      blue: 5
+      black: 2
+      red: 2
+      green: '*'
+  - image: Ojo1.gif
+    when:
+      blue: 5
+      black: 2
+      red: 1
+      green: '*'
+  - image: Ojo0.gif
+    when:
+      blue: 5
+      black: 2
+      red: 0
+      green: '*'
+  - image: Bones6.gif
+    when:
+      blue: 6
+      black: 2
+      red: 6
+      green: '*'
+  - image: Bones5.gif
+    when:
+      blue: 6
+      black: 2
+      red: 5
+      green: '*'
+  - image: Bones4.gif
+    when:
+      blue: 6
+      black: 2
+      red: 4
+      green: '*'
+  - image: Bones3.gif
+    when:
+      blue: 6
+      black: 2
+      red: 3
+      green: '*'
+  - image: Bones2.gif
+    when:
+      blue: 6
+      black: 2
+      red: 2
+      green: '*'
+  - image: Bones1.gif
+    when:
+      blue: 6
+      black: 2
+      red: 1
+      green: '*'
+  - image: Bones0.gif
+    when:
+      blue: 6
+      black: 2
+      red: 0
+      green: '*'
+  - text: 'Null'
+    when:
+      blue: 0
+      black: 9
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - image: Desplazamiento.jpg
+    when:
+      blue: 1
+      black: 9
+      red: '*'
+      green: '*'
+  - image: Golpe.jpg
+    when:
+      blue: 2
+      black: 9
+      red: '*'
+      green: '*'
+  - image: Transformar.jpg
+    when:
+      blue: 3
+      black: 9
+      red: '*'
+      green: '*'
+  - image: Hechizo.jpg
+    when:
+      blue: 4
+      black: 9
+      red: '*'
+      green: '*'
+  - image: Cofre.jpg
+    when:
+      blue: '*'
+      black: 4
+      red: '*'
+      green: '*'
+  - image: Casco.jpg
+    when:
+      blue: 15
+      black: 3
+      red: 5
+      green: '*'
+  - image: Escudo.jpg
+    when:
+      blue: 15
+      black: 3
+      red: 3
+      green: '*'
+  - image: Pocion.jpg
+    when:
+      blue: 0
+      black: 3
+      red: 5
+      green: '*'
+  - image: Antidoto.jpg
+    when:
+      blue: 7
+      black: 3
+      red: 0
+      green: '*'
+  - image: Logo.png
+    when:
+      blue: 0
+      black: 0
+      red: '*'
+      green: 0
+  - image: Reg.jpg
+    when:
+      blue: 3
+      black: 3
+      red: 2
+      green: '*'
+  - image: Armadura.jpg
+    when:
+      blue: 13
+      black: 3
+      red: 5
+      green: '*'
+  - image: Fort.jpg
+    when:
+      blue: 4
+      black: 3
+      red: 1
+      green: '*'
+  - image: Elixir.jpg
+    when:
+      blue: 14
+      black: 3
+      red: 8
+      green: '*'
+  - text: '000'
+    when:
+      blue: 0
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '001'
+    when:
+      blue: 1
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '002'
+    when:
+      blue: 2
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '003'
+    when:
+      blue: 3
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '004'
+    when:
+      blue: 4
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '005'
+    when:
+      blue: 5
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '006'
+    when:
+      blue: 6
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '007'
+    when:
+      blue: 7
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 008
+    when:
+      blue: 8
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 009
+    when:
+      blue: 9
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '010'
+    when:
+      blue: 10
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '011'
+    when:
+      blue: 11
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '012'
+    when:
+      blue: 12
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '013'
+    when:
+      blue: 13
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '014'
+    when:
+      blue: 14
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '015'
+    when:
+      blue: 15
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '016'
+    when:
+      blue: 16
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '017'
+    when:
+      blue: 17
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 018
+    when:
+      blue: 18
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 019
+    when:
+      blue: 19
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '020'
+    when:
+      blue: 20
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '021'
+    when:
+      blue: 21
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '022'
+    when:
+      blue: 22
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '023'
+    when:
+      blue: 23
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '024'
+    when:
+      blue: 24
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '025'
+    when:
+      blue: 25
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '026'
+    when:
+      blue: 26
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '027'
+    when:
+      blue: 27
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 028
+    when:
+      blue: 28
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 029
+    when:
+      blue: 29
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '030'
+    when:
+      blue: 30
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '031'
+    when:
+      blue: 31
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '032'
+    when:
+      blue: 32
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '033'
+    when:
+      blue: 33
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '034'
+    when:
+      blue: 34
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '035'
+    when:
+      blue: 35
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '036'
+    when:
+      blue: 36
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '037'
+    when:
+      blue: 37
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 038
+    when:
+      blue: 38
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 039
+    when:
+      blue: 39
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '040'
+    when:
+      blue: 40
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '041'
+    when:
+      blue: 41
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '042'
+    when:
+      blue: 42
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '043'
+    when:
+      blue: 43
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '044'
+    when:
+      blue: 44
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '045'
+    when:
+      blue: 45
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '046'
+    when:
+      blue: 46
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '047'
+    when:
+      blue: 47
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 048
+    when:
+      blue: 48
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 049
+    when:
+      blue: 49
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '050'
+    when:
+      blue: 50
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '051'
+    when:
+      blue: 51
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '052'
+    when:
+      blue: 52
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '053'
+    when:
+      blue: 53
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '054'
+    when:
+      blue: 54
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '055'
+    when:
+      blue: 55
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '056'
+    when:
+      blue: 56
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '057'
+    when:
+      blue: 57
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 058
+    when:
+      blue: 58
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 059
+    when:
+      blue: 59
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '060'
+    when:
+      blue: 60
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '061'
+    when:
+      blue: 61
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '062'
+    when:
+      blue: 62
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '063'
+    when:
+      blue: 63
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '064'
+    when:
+      blue: 64
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '065'
+    when:
+      blue: 65
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '066'
+    when:
+      blue: 66
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '067'
+    when:
+      blue: 67
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 068
+    when:
+      blue: 68
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 069
+    when:
+      blue: 69
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '070'
+    when:
+      blue: 70
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '071'
+    when:
+      blue: 71
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '072'
+    when:
+      blue: 72
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '073'
+    when:
+      blue: 73
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '074'
+    when:
+      blue: 74
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '075'
+    when:
+      blue: 75
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '076'
+    when:
+      blue: 76
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '077'
+    when:
+      blue: 77
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 078
+    when:
+      blue: 78
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 079
+    when:
+      blue: 79
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 080
+    when:
+      blue: 80
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 081
+    when:
+      blue: 81
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 082
+    when:
+      blue: 82
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 083
+    when:
+      blue: 83
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 084
+    when:
+      blue: 84
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 085
+    when:
+      blue: 85
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 086
+    when:
+      blue: 86
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 087
+    when:
+      blue: 87
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 088
+    when:
+      blue: 88
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 089
+    when:
+      blue: 89
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 090
+    when:
+      blue: 90
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 091
+    when:
+      blue: 91
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 092
+    when:
+      blue: 92
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 093
+    when:
+      blue: 93
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 094
+    when:
+      blue: 94
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 095
+    when:
+      blue: 95
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 096
+    when:
+      blue: 96
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 097
+    when:
+      blue: 97
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 098
+    when:
+      blue: 98
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 099
+    when:
+      blue: 99
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '100'
+    when:
+      blue: 100
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '101'
+    when:
+      blue: 101
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '102'
+    when:
+      blue: 102
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '103'
+    when:
+      blue: 103
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '104'
+    when:
+      blue: 104
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '105'
+    when:
+      blue: 105
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '106'
+    when:
+      blue: 106
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '107'
+    when:
+      blue: 107
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '108'
+    when:
+      blue: 108
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '109'
+    when:
+      blue: 109
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '110'
+    when:
+      blue: 110
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '111'
+    when:
+      blue: 111
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '112'
+    when:
+      blue: 112
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '113'
+    when:
+      blue: 113
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '114'
+    when:
+      blue: 114
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '115'
+    when:
+      blue: 115
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '116'
+    when:
+      blue: 116
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '117'
+    when:
+      blue: 117
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '118'
+    when:
+      blue: 118
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '119'
+    when:
+      blue: 119
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '120'
+    when:
+      blue: 120
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '121'
+    when:
+      blue: 121
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '122'
+    when:
+      blue: 122
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '123'
+    when:
+      blue: 123
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '124'
+    when:
+      blue: 124
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '125'
+    when:
+      blue: 125
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '126'
+    when:
+      blue: 126
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '127'
+    when:
+      blue: 127
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '128'
+    when:
+      blue: 128
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '129'
+    when:
+      blue: 129
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '130'
+    when:
+      blue: 130
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '131'
+    when:
+      blue: 131
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '132'
+    when:
+      blue: 132
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '133'
+    when:
+      blue: 133
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '134'
+    when:
+      blue: 134
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '135'
+    when:
+      blue: 135
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '136'
+    when:
+      blue: 136
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '137'
+    when:
+      blue: 137
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '138'
+    when:
+      blue: 138
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '139'
+    when:
+      blue: 139
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '140'
+    when:
+      blue: 140
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '141'
+    when:
+      blue: 141
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '142'
+    when:
+      blue: 142
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '143'
+    when:
+      blue: 143
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '144'
+    when:
+      blue: 144
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '145'
+    when:
+      blue: 145
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '146'
+    when:
+      blue: 146
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '147'
+    when:
+      blue: 147
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '148'
+    when:
+      blue: 148
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '149'
+    when:
+      blue: 149
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '150'
+    when:
+      blue: 150
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '151'
+    when:
+      blue: 151
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '152'
+    when:
+      blue: 152
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '153'
+    when:
+      blue: 153
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '154'
+    when:
+      blue: 154
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '155'
+    when:
+      blue: 155
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '156'
+    when:
+      blue: 156
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '157'
+    when:
+      blue: 157
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '158'
+    when:
+      blue: 158
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '159'
+    when:
+      blue: 159
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '160'
+    when:
+      blue: 160
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '161'
+    when:
+      blue: 161
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '162'
+    when:
+      blue: 162
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '163'
+    when:
+      blue: 163
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '164'
+    when:
+      blue: 164
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '165'
+    when:
+      blue: 165
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '166'
+    when:
+      blue: 166
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '167'
+    when:
+      blue: 167
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '168'
+    when:
+      blue: 168
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '169'
+    when:
+      blue: 169
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '170'
+    when:
+      blue: 170
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '171'
+    when:
+      blue: 171
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '172'
+    when:
+      blue: 172
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '173'
+    when:
+      blue: 173
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '174'
+    when:
+      blue: 174
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '175'
+    when:
+      blue: 175
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '176'
+    when:
+      blue: 176
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '177'
+    when:
+      blue: 177
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '178'
+    when:
+      blue: 178
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '179'
+    when:
+      blue: 179
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '180'
+    when:
+      blue: 180
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '181'
+    when:
+      blue: 181
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '182'
+    when:
+      blue: 182
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '183'
+    when:
+      blue: 183
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '184'
+    when:
+      blue: 184
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '185'
+    when:
+      blue: 185
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '186'
+    when:
+      blue: 186
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '187'
+    when:
+      blue: 187
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '188'
+    when:
+      blue: 188
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '189'
+    when:
+      blue: 189
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '190'
+    when:
+      blue: 190
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '191'
+    when:
+      blue: 191
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '192'
+    when:
+      blue: 192
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '193'
+    when:
+      blue: 193
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '194'
+    when:
+      blue: 194
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '195'
+    when:
+      blue: 195
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '196'
+    when:
+      blue: 196
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '197'
+    when:
+      blue: 197
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '198'
+    when:
+      blue: 198
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '199'
+    when:
+      blue: 199
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '200'
+    when:
+      blue: 200
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '201'
+    when:
+      blue: 201
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '202'
+    when:
+      blue: 202
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '203'
+    when:
+      blue: 203
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '204'
+    when:
+      blue: 204
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '205'
+    when:
+      blue: 205
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '206'
+    when:
+      blue: 206
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '207'
+    when:
+      blue: 207
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '208'
+    when:
+      blue: 208
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '209'
+    when:
+      blue: 209
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '210'
+    when:
+      blue: 210
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '211'
+    when:
+      blue: 211
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '212'
+    when:
+      blue: 212
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '213'
+    when:
+      blue: 213
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '214'
+    when:
+      blue: 214
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '215'
+    when:
+      blue: 215
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '216'
+    when:
+      blue: 216
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '217'
+    when:
+      blue: 217
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '218'
+    when:
+      blue: 218
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '219'
+    when:
+      blue: 219
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '220'
+    when:
+      blue: 220
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '221'
+    when:
+      blue: 221
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '222'
+    when:
+      blue: 222
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '223'
+    when:
+      blue: 223
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '224'
+    when:
+      blue: 224
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '225'
+    when:
+      blue: 225
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '226'
+    when:
+      blue: 226
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '227'
+    when:
+      blue: 227
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '228'
+    when:
+      blue: 228
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '229'
+    when:
+      blue: 229
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '230'
+    when:
+      blue: 230
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '231'
+    when:
+      blue: 231
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '232'
+    when:
+      blue: 232
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '233'
+    when:
+      blue: 233
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '234'
+    when:
+      blue: 234
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '235'
+    when:
+      blue: 235
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '236'
+    when:
+      blue: 236
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '237'
+    when:
+      blue: 237
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '238'
+    when:
+      blue: 238
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '239'
+    when:
+      blue: 239
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '240'
+    when:
+      blue: 240
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '241'
+    when:
+      blue: 241
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '242'
+    when:
+      blue: 242
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '243'
+    when:
+      blue: 243
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '244'
+    when:
+      blue: 244
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '245'
+    when:
+      blue: 245
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '246'
+    when:
+      blue: 246
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '247'
+    when:
+      blue: 247
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '248'
+    when:
+      blue: 248
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '249'
+    when:
+      blue: 249
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '250'
+    when:
+      blue: 250
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '251'
+    when:
+      blue: 251
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '252'
+    when:
+      blue: 252
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '253'
+    when:
+      blue: 253
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '254'
+    when:
+      blue: 254
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '255'
+    when:
+      blue: 255
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '256'
+    when:
+      blue: 256
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '257'
+    when:
+      blue: 257
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '258'
+    when:
+      blue: 258
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '259'
+    when:
+      blue: 259
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '260'
+    when:
+      blue: 260
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '261'
+    when:
+      blue: 261
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '262'
+    when:
+      blue: 262
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '263'
+    when:
+      blue: 263
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '264'
+    when:
+      blue: 264
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '265'
+    when:
+      blue: 265
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '266'
+    when:
+      blue: 266
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '267'
+    when:
+      blue: 267
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '268'
+    when:
+      blue: 268
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '269'
+    when:
+      blue: 269
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '270'
+    when:
+      blue: 270
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '271'
+    when:
+      blue: 271
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '272'
+    when:
+      blue: 272
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '273'
+    when:
+      blue: 273
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '274'
+    when:
+      blue: 274
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '275'
+    when:
+      blue: 275
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '276'
+    when:
+      blue: 276
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '277'
+    when:
+      blue: 277
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '278'
+    when:
+      blue: 278
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '279'
+    when:
+      blue: 279
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '280'
+    when:
+      blue: 280
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '281'
+    when:
+      blue: 281
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '282'
+    when:
+      blue: 282
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '283'
+    when:
+      blue: 283
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '284'
+    when:
+      blue: 284
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '285'
+    when:
+      blue: 285
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '286'
+    when:
+      blue: 286
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '287'
+    when:
+      blue: 287
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '288'
+    when:
+      blue: 288
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '289'
+    when:
+      blue: 289
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '290'
+    when:
+      blue: 290
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '291'
+    when:
+      blue: 291
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '292'
+    when:
+      blue: 292
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '293'
+    when:
+      blue: 293
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '294'
+    when:
+      blue: 294
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '295'
+    when:
+      blue: 295
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '296'
+    when:
+      blue: 296
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '297'
+    when:
+      blue: 297
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '298'
+    when:
+      blue: 298
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '299'
+    when:
+      blue: 99
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '300'
+    when:
+      blue: 300
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '301'
+    when:
+      blue: 301
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '302'
+    when:
+      blue: 302
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '303'
+    when:
+      blue: 303
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '304'
+    when:
+      blue: 304
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '305'
+    when:
+      blue: 305
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '306'
+    when:
+      blue: 306
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '307'
+    when:
+      blue: 307
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '308'
+    when:
+      blue: 308
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '309'
+    when:
+      blue: 309
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '310'
+    when:
+      blue: 310
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '311'
+    when:
+      blue: 311
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '312'
+    when:
+      blue: 312
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '313'
+    when:
+      blue: 313
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '314'
+    when:
+      blue: 314
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '315'
+    when:
+      blue: 315
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '316'
+    when:
+      blue: 316
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '317'
+    when:
+      blue: 317
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '318'
+    when:
+      blue: 318
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '319'
+    when:
+      blue: 319
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '320'
+    when:
+      blue: 320
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '321'
+    when:
+      blue: 321
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '322'
+    when:
+      blue: 322
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '323'
+    when:
+      blue: 323
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '324'
+    when:
+      blue: 324
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '325'
+    when:
+      blue: 325
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '326'
+    when:
+      blue: 326
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '327'
+    when:
+      blue: 327
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '328'
+    when:
+      blue: 328
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '329'
+    when:
+      blue: 329
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '330'
+    when:
+      blue: 330
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '331'
+    when:
+      blue: 331
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '332'
+    when:
+      blue: 332
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '333'
+    when:
+      blue: 333
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '334'
+    when:
+      blue: 334
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '335'
+    when:
+      blue: 335
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '336'
+    when:
+      blue: 336
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '337'
+    when:
+      blue: 337
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '338'
+    when:
+      blue: 338
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '339'
+    when:
+      blue: 339
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '340'
+    when:
+      blue: 340
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '341'
+    when:
+      blue: 341
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '342'
+    when:
+      blue: 342
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '343'
+    when:
+      blue: 343
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '344'
+    when:
+      blue: 344
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '345'
+    when:
+      blue: 345
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '346'
+    when:
+      blue: 346
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '347'
+    when:
+      blue: 347
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '348'
+    when:
+      blue: 348
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '349'
+    when:
+      blue: 349
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '350'
+    when:
+      blue: 350
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '351'
+    when:
+      blue: 351
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '352'
+    when:
+      blue: 352
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '353'
+    when:
+      blue: 353
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '354'
+    when:
+      blue: 354
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '355'
+    when:
+      blue: 355
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '356'
+    when:
+      blue: 356
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '357'
+    when:
+      blue: 357
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '358'
+    when:
+      blue: 358
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '359'
+    when:
+      blue: 359
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '360'
+    when:
+      blue: 360
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '361'
+    when:
+      blue: 361
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '362'
+    when:
+      blue: 362
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '363'
+    when:
+      blue: 363
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '364'
+    when:
+      blue: 364
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '365'
+    when:
+      blue: 365
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '366'
+    when:
+      blue: 366
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '367'
+    when:
+      blue: 367
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '368'
+    when:
+      blue: 368
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '369'
+    when:
+      blue: 369
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '370'
+    when:
+      blue: 370
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '371'
+    when:
+      blue: 371
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '372'
+    when:
+      blue: 372
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '373'
+    when:
+      blue: 373
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '374'
+    when:
+      blue: 374
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '375'
+    when:
+      blue: 375
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '376'
+    when:
+      blue: 376
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '377'
+    when:
+      blue: 377
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '378'
+    when:
+      blue: 378
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '379'
+    when:
+      blue: 379
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '380'
+    when:
+      blue: 380
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '381'
+    when:
+      blue: 381
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '382'
+    when:
+      blue: 382
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '383'
+    when:
+      blue: 383
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '384'
+    when:
+      blue: 384
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '385'
+    when:
+      blue: 385
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '386'
+    when:
+      blue: 386
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '387'
+    when:
+      blue: 387
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '388'
+    when:
+      blue: 388
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '389'
+    when:
+      blue: 389
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '390'
+    when:
+      blue: 390
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '391'
+    when:
+      blue: 391
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '392'
+    when:
+      blue: 392
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '393'
+    when:
+      blue: 393
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '394'
+    when:
+      blue: 394
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '395'
+    when:
+      blue: 395
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '396'
+    when:
+      blue: 396
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '397'
+    when:
+      blue: 397
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '398'
+    when:
+      blue: 398
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '399'
+    when:
+      blue: 399
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '400'
+    when:
+      blue: 400
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '401'
+    when:
+      blue: 401
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '402'
+    when:
+      blue: 402
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '403'
+    when:
+      blue: 403
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '404'
+    when:
+      blue: 404
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '405'
+    when:
+      blue: 405
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '406'
+    when:
+      blue: 406
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '407'
+    when:
+      blue: 407
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '408'
+    when:
+      blue: 408
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '409'
+    when:
+      blue: 409
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '410'
+    when:
+      blue: 410
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '411'
+    when:
+      blue: 411
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '412'
+    when:
+      blue: 412
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '413'
+    when:
+      blue: 413
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '414'
+    when:
+      blue: 414
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '415'
+    when:
+      blue: 415
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '416'
+    when:
+      blue: 416
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '417'
+    when:
+      blue: 417
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '418'
+    when:
+      blue: 418
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '419'
+    when:
+      blue: 419
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '420'
+    when:
+      blue: 420
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '421'
+    when:
+      blue: 421
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '422'
+    when:
+      blue: 422
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '423'
+    when:
+      blue: 423
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '424'
+    when:
+      blue: 424
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '425'
+    when:
+      blue: 425
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '426'
+    when:
+      blue: 426
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '427'
+    when:
+      blue: 427
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '428'
+    when:
+      blue: 428
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '429'
+    when:
+      blue: 429
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '430'
+    when:
+      blue: 430
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '431'
+    when:
+      blue: 431
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '432'
+    when:
+      blue: 432
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '433'
+    when:
+      blue: 433
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '434'
+    when:
+      blue: 434
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '435'
+    when:
+      blue: 435
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '436'
+    when:
+      blue: 436
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '437'
+    when:
+      blue: 437
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '438'
+    when:
+      blue: 438
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '439'
+    when:
+      blue: 439
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '440'
+    when:
+      blue: 440
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '441'
+    when:
+      blue: 441
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '442'
+    when:
+      blue: 442
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '443'
+    when:
+      blue: 443
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '444'
+    when:
+      blue: 444
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '445'
+    when:
+      blue: 445
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '446'
+    when:
+      blue: 446
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '447'
+    when:
+      blue: 447
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '448'
+    when:
+      blue: 448
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '449'
+    when:
+      blue: 449
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '450'
+    when:
+      blue: 450
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '451'
+    when:
+      blue: 451
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '452'
+    when:
+      blue: 452
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '453'
+    when:
+      blue: 453
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '454'
+    when:
+      blue: 454
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '455'
+    when:
+      blue: 455
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '456'
+    when:
+      blue: 456
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '457'
+    when:
+      blue: 457
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '458'
+    when:
+      blue: 458
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '459'
+    when:
+      blue: 459
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '460'
+    when:
+      blue: 460
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '461'
+    when:
+      blue: 461
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '462'
+    when:
+      blue: 462
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '463'
+    when:
+      blue: 463
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '464'
+    when:
+      blue: 464
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '465'
+    when:
+      blue: 465
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '466'
+    when:
+      blue: 466
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '467'
+    when:
+      blue: 467
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '468'
+    when:
+      blue: 468
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '469'
+    when:
+      blue: 469
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '470'
+    when:
+      blue: 470
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '471'
+    when:
+      blue: 471
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '472'
+    when:
+      blue: 472
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '473'
+    when:
+      blue: 473
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '474'
+    when:
+      blue: 474
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '475'
+    when:
+      blue: 475
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '476'
+    when:
+      blue: 476
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '477'
+    when:
+      blue: 477
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '478'
+    when:
+      blue: 478
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '479'
+    when:
+      blue: 479
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '480'
+    when:
+      blue: 480
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '481'
+    when:
+      blue: 481
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '482'
+    when:
+      blue: 482
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '483'
+    when:
+      blue: 483
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '484'
+    when:
+      blue: 484
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '485'
+    when:
+      blue: 485
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '486'
+    when:
+      blue: 486
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '487'
+    when:
+      blue: 487
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '488'
+    when:
+      blue: 488
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '489'
+    when:
+      blue: 489
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '490'
+    when:
+      blue: 490
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '491'
+    when:
+      blue: 491
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '492'
+    when:
+      blue: 492
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '493'
+    when:
+      blue: 493
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '494'
+    when:
+      blue: 494
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '495'
+    when:
+      blue: 495
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '496'
+    when:
+      blue: 496
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '497'
+    when:
+      blue: 497
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '498'
+    when:
+      blue: 498
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '499'
+    when:
+      blue: 499
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '500'
+    when:
+      blue: 500
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '501'
+    when:
+      blue: 501
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '502'
+    when:
+      blue: 502
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '503'
+    when:
+      blue: 503
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '504'
+    when:
+      blue: 504
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '505'
+    when:
+      blue: 505
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '506'
+    when:
+      blue: 506
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '507'
+    when:
+      blue: 507
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '508'
+    when:
+      blue: 508
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '509'
+    when:
+      blue: 509
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '510'
+    when:
+      blue: 510
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '511'
+    when:
+      blue: 511
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '512'
+    when:
+      blue: 512
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '513'
+    when:
+      blue: 513
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '514'
+    when:
+      blue: 514
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '515'
+    when:
+      blue: 515
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '516'
+    when:
+      blue: 516
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '517'
+    when:
+      blue: 517
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '518'
+    when:
+      blue: 518
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '519'
+    when:
+      blue: 519
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '520'
+    when:
+      blue: 520
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '521'
+    when:
+      blue: 521
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '522'
+    when:
+      blue: 522
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '523'
+    when:
+      blue: 523
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '524'
+    when:
+      blue: 524
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '525'
+    when:
+      blue: 525
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '526'
+    when:
+      blue: 526
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '527'
+    when:
+      blue: 527
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '528'
+    when:
+      blue: 528
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '529'
+    when:
+      blue: 529
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '530'
+    when:
+      blue: 530
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '531'
+    when:
+      blue: 531
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '532'
+    when:
+      blue: 532
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '533'
+    when:
+      blue: 533
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '534'
+    when:
+      blue: 534
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '535'
+    when:
+      blue: 535
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '536'
+    when:
+      blue: 536
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '537'
+    when:
+      blue: 537
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '538'
+    when:
+      blue: 538
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '539'
+    when:
+      blue: 539
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '540'
+    when:
+      blue: 540
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '541'
+    when:
+      blue: 541
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '542'
+    when:
+      blue: 542
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '543'
+    when:
+      blue: 543
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '544'
+    when:
+      blue: 544
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '545'
+    when:
+      blue: 545
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '546'
+    when:
+      blue: 546
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '547'
+    when:
+      blue: 547
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '548'
+    when:
+      blue: 548
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '549'
+    when:
+      blue: 549
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '550'
+    when:
+      blue: 550
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '551'
+    when:
+      blue: 551
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '552'
+    when:
+      blue: 552
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '553'
+    when:
+      blue: 553
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '554'
+    when:
+      blue: 554
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '555'
+    when:
+      blue: 555
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '556'
+    when:
+      blue: 556
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '557'
+    when:
+      blue: 557
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '558'
+    when:
+      blue: 558
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '559'
+    when:
+      blue: 559
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '560'
+    when:
+      blue: 560
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '561'
+    when:
+      blue: 561
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '562'
+    when:
+      blue: 562
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '563'
+    when:
+      blue: 563
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '564'
+    when:
+      blue: 564
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '565'
+    when:
+      blue: 565
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '566'
+    when:
+      blue: 566
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '567'
+    when:
+      blue: 567
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '568'
+    when:
+      blue: 568
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '569'
+    when:
+      blue: 569
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '570'
+    when:
+      blue: 570
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '571'
+    when:
+      blue: 571
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '572'
+    when:
+      blue: 572
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '573'
+    when:
+      blue: 573
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '574'
+    when:
+      blue: 574
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '575'
+    when:
+      blue: 575
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '576'
+    when:
+      blue: 576
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '577'
+    when:
+      blue: 577
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '578'
+    when:
+      blue: 578
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '579'
+    when:
+      blue: 579
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '580'
+    when:
+      blue: 580
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '581'
+    when:
+      blue: 581
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '582'
+    when:
+      blue: 582
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '583'
+    when:
+      blue: 583
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '584'
+    when:
+      blue: 584
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '585'
+    when:
+      blue: 585
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '586'
+    when:
+      blue: 586
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '587'
+    when:
+      blue: 587
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '588'
+    when:
+      blue: 588
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '589'
+    when:
+      blue: 589
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '590'
+    when:
+      blue: 590
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '591'
+    when:
+      blue: 591
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '592'
+    when:
+      blue: 592
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '593'
+    when:
+      blue: 593
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '594'
+    when:
+      blue: 594
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '595'
+    when:
+      blue: 595
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '596'
+    when:
+      blue: 596
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '597'
+    when:
+      blue: 597
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '598'
+    when:
+      blue: 598
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '599'
+    when:
+      blue: 599
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '600'
+    when:
+      blue: 600
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '601'
+    when:
+      blue: 601
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '602'
+    when:
+      blue: 602
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '603'
+    when:
+      blue: 603
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '604'
+    when:
+      blue: 604
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '605'
+    when:
+      blue: 605
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '606'
+    when:
+      blue: 606
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '607'
+    when:
+      blue: 607
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '608'
+    when:
+      blue: 608
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '609'
+    when:
+      blue: 609
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '610'
+    when:
+      blue: 610
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '611'
+    when:
+      blue: 611
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '612'
+    when:
+      blue: 612
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '613'
+    when:
+      blue: 613
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '614'
+    when:
+      blue: 614
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '615'
+    when:
+      blue: 615
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '616'
+    when:
+      blue: 616
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '617'
+    when:
+      blue: 617
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '618'
+    when:
+      blue: 618
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '619'
+    when:
+      blue: 619
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '620'
+    when:
+      blue: 620
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '621'
+    when:
+      blue: 621
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '622'
+    when:
+      blue: 622
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '623'
+    when:
+      blue: 623
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '624'
+    when:
+      blue: 624
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '625'
+    when:
+      blue: 625
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '626'
+    when:
+      blue: 626
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '627'
+    when:
+      blue: 627
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '628'
+    when:
+      blue: 628
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '629'
+    when:
+      blue: 629
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '630'
+    when:
+      blue: 630
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '631'
+    when:
+      blue: 631
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '632'
+    when:
+      blue: 632
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '633'
+    when:
+      blue: 633
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '634'
+    when:
+      blue: 634
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '635'
+    when:
+      blue: 635
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '636'
+    when:
+      blue: 636
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '637'
+    when:
+      blue: 637
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '638'
+    when:
+      blue: 638
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '639'
+    when:
+      blue: 639
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '640'
+    when:
+      blue: 640
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '641'
+    when:
+      blue: 641
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '642'
+    when:
+      blue: 642
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '643'
+    when:
+      blue: 643
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '644'
+    when:
+      blue: 644
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '645'
+    when:
+      blue: 645
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '646'
+    when:
+      blue: 646
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '647'
+    when:
+      blue: 647
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '648'
+    when:
+      blue: 648
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '649'
+    when:
+      blue: 649
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '650'
+    when:
+      blue: 650
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '651'
+    when:
+      blue: 651
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '652'
+    when:
+      blue: 652
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '653'
+    when:
+      blue: 653
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '654'
+    when:
+      blue: 654
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '655'
+    when:
+      blue: 655
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '656'
+    when:
+      blue: 656
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '657'
+    when:
+      blue: 657
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '658'
+    when:
+      blue: 658
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '659'
+    when:
+      blue: 659
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '660'
+    when:
+      blue: 660
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '661'
+    when:
+      blue: 661
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '662'
+    when:
+      blue: 662
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '663'
+    when:
+      blue: 663
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '664'
+    when:
+      blue: 664
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '665'
+    when:
+      blue: 665
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '666'
+    when:
+      blue: 666
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '667'
+    when:
+      blue: 667
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '668'
+    when:
+      blue: 668
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '669'
+    when:
+      blue: 669
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '670'
+    when:
+      blue: 670
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '671'
+    when:
+      blue: 671
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '672'
+    when:
+      blue: 672
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '673'
+    when:
+      blue: 673
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '674'
+    when:
+      blue: 674
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '675'
+    when:
+      blue: 675
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '676'
+    when:
+      blue: 676
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '677'
+    when:
+      blue: 677
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '678'
+    when:
+      blue: 678
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '679'
+    when:
+      blue: 679
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '680'
+    when:
+      blue: 680
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '681'
+    when:
+      blue: 681
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '682'
+    when:
+      blue: 682
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '683'
+    when:
+      blue: 683
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '684'
+    when:
+      blue: 684
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '685'
+    when:
+      blue: 685
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '686'
+    when:
+      blue: 686
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '687'
+    when:
+      blue: 687
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '688'
+    when:
+      blue: 688
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '689'
+    when:
+      blue: 689
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '690'
+    when:
+      blue: 690
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '691'
+    when:
+      blue: 691
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '692'
+    when:
+      blue: 692
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '693'
+    when:
+      blue: 693
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '694'
+    when:
+      blue: 694
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '695'
+    when:
+      blue: 695
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '696'
+    when:
+      blue: 696
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '697'
+    when:
+      blue: 697
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '698'
+    when:
+      blue: 698
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '699'
+    when:
+      blue: 699
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '700'
+    when:
+      blue: 700
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '701'
+    when:
+      blue: 701
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '702'
+    when:
+      blue: 702
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '703'
+    when:
+      blue: 703
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '704'
+    when:
+      blue: 704
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '705'
+    when:
+      blue: 705
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '706'
+    when:
+      blue: 706
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '707'
+    when:
+      blue: 707
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '708'
+    when:
+      blue: 708
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '709'
+    when:
+      blue: 709
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '710'
+    when:
+      blue: 710
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '711'
+    when:
+      blue: 711
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '712'
+    when:
+      blue: 712
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '713'
+    when:
+      blue: 713
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '714'
+    when:
+      blue: 714
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '715'
+    when:
+      blue: 715
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '716'
+    when:
+      blue: 716
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '717'
+    when:
+      blue: 717
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '718'
+    when:
+      blue: 718
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '719'
+    when:
+      blue: 719
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '720'
+    when:
+      blue: 720
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '721'
+    when:
+      blue: 721
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '722'
+    when:
+      blue: 722
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '723'
+    when:
+      blue: 723
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '724'
+    when:
+      blue: 724
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '725'
+    when:
+      blue: 725
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '726'
+    when:
+      blue: 726
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '727'
+    when:
+      blue: 727
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '728'
+    when:
+      blue: 728
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '729'
+    when:
+      blue: 729
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '730'
+    when:
+      blue: 730
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '731'
+    when:
+      blue: 731
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '732'
+    when:
+      blue: 732
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '733'
+    when:
+      blue: 733
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '734'
+    when:
+      blue: 734
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '735'
+    when:
+      blue: 735
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '736'
+    when:
+      blue: 736
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '737'
+    when:
+      blue: 737
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '738'
+    when:
+      blue: 738
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '739'
+    when:
+      blue: 739
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '740'
+    when:
+      blue: 740
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '741'
+    when:
+      blue: 741
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '742'
+    when:
+      blue: 742
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '743'
+    when:
+      blue: 743
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '744'
+    when:
+      blue: 744
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '745'
+    when:
+      blue: 745
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '746'
+    when:
+      blue: 746
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '747'
+    when:
+      blue: 747
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '748'
+    when:
+      blue: 748
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '749'
+    when:
+      blue: 749
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '750'
+    when:
+      blue: 750
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '751'
+    when:
+      blue: 751
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '752'
+    when:
+      blue: 752
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '753'
+    when:
+      blue: 753
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '754'
+    when:
+      blue: 754
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '755'
+    when:
+      blue: 755
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '756'
+    when:
+      blue: 756
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '757'
+    when:
+      blue: 757
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '758'
+    when:
+      blue: 758
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '759'
+    when:
+      blue: 759
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '760'
+    when:
+      blue: 760
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '761'
+    when:
+      blue: 761
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '762'
+    when:
+      blue: 762
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '763'
+    when:
+      blue: 763
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '764'
+    when:
+      blue: 764
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '765'
+    when:
+      blue: 765
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '766'
+    when:
+      blue: 766
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '767'
+    when:
+      blue: 767
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '768'
+    when:
+      blue: 768
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '769'
+    when:
+      blue: 769
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '770'
+    when:
+      blue: 770
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '771'
+    when:
+      blue: 771
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '772'
+    when:
+      blue: 772
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '773'
+    when:
+      blue: 773
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '774'
+    when:
+      blue: 774
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '775'
+    when:
+      blue: 775
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '776'
+    when:
+      blue: 776
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '777'
+    when:
+      blue: 777
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '778'
+    when:
+      blue: 778
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '779'
+    when:
+      blue: 779
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '780'
+    when:
+      blue: 780
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '781'
+    when:
+      blue: 781
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '782'
+    when:
+      blue: 782
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '783'
+    when:
+      blue: 783
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '784'
+    when:
+      blue: 784
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '785'
+    when:
+      blue: 785
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '786'
+    when:
+      blue: 786
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '787'
+    when:
+      blue: 787
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '788'
+    when:
+      blue: 788
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '789'
+    when:
+      blue: 789
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '790'
+    when:
+      blue: 790
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '791'
+    when:
+      blue: 791
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '792'
+    when:
+      blue: 792
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '793'
+    when:
+      blue: 793
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '794'
+    when:
+      blue: 794
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '795'
+    when:
+      blue: 795
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '796'
+    when:
+      blue: 796
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '797'
+    when:
+      blue: 797
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '798'
+    when:
+      blue: 798
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '799'
+    when:
+      blue: 99
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '800'
+    when:
+      blue: 100
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '801'
+    when:
+      blue: 801
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '802'
+    when:
+      blue: 802
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '803'
+    when:
+      blue: 803
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '804'
+    when:
+      blue: 804
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '805'
+    when:
+      blue: 805
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '806'
+    when:
+      blue: 806
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '807'
+    when:
+      blue: 807
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '808'
+    when:
+      blue: 808
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '809'
+    when:
+      blue: 809
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '810'
+    when:
+      blue: 810
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '811'
+    when:
+      blue: 811
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '812'
+    when:
+      blue: 812
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '813'
+    when:
+      blue: 813
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '814'
+    when:
+      blue: 814
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '815'
+    when:
+      blue: 815
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '816'
+    when:
+      blue: 816
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '817'
+    when:
+      blue: 817
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '818'
+    when:
+      blue: 818
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '819'
+    when:
+      blue: 819
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '820'
+    when:
+      blue: 820
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '821'
+    when:
+      blue: 821
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '822'
+    when:
+      blue: 822
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '823'
+    when:
+      blue: 823
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '824'
+    when:
+      blue: 824
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '825'
+    when:
+      blue: 825
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '826'
+    when:
+      blue: 826
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '827'
+    when:
+      blue: 827
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '828'
+    when:
+      blue: 828
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '829'
+    when:
+      blue: 829
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '830'
+    when:
+      blue: 830
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '831'
+    when:
+      blue: 831
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '832'
+    when:
+      blue: 832
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '833'
+    when:
+      blue: 833
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '834'
+    when:
+      blue: 834
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '835'
+    when:
+      blue: 835
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '836'
+    when:
+      blue: 836
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '837'
+    when:
+      blue: 837
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '838'
+    when:
+      blue: 838
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '839'
+    when:
+      blue: 839
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '840'
+    when:
+      blue: 840
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '841'
+    when:
+      blue: 841
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '842'
+    when:
+      blue: 842
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '843'
+    when:
+      blue: 843
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '844'
+    when:
+      blue: 844
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '845'
+    when:
+      blue: 845
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '846'
+    when:
+      blue: 846
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '847'
+    when:
+      blue: 847
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '848'
+    when:
+      blue: 848
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '849'
+    when:
+      blue: 849
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '850'
+    when:
+      blue: 850
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '851'
+    when:
+      blue: 851
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '852'
+    when:
+      blue: 852
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '853'
+    when:
+      blue: 853
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '854'
+    when:
+      blue: 854
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '855'
+    when:
+      blue: 855
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '856'
+    when:
+      blue: 856
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '857'
+    when:
+      blue: 857
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '858'
+    when:
+      blue: 858
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '859'
+    when:
+      blue: 859
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '860'
+    when:
+      blue: 860
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '861'
+    when:
+      blue: 861
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '862'
+    when:
+      blue: 862
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '863'
+    when:
+      blue: 863
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '864'
+    when:
+      blue: 864
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '865'
+    when:
+      blue: 865
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '866'
+    when:
+      blue: 866
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '867'
+    when:
+      blue: 867
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '868'
+    when:
+      blue: 868
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '869'
+    when:
+      blue: 869
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '870'
+    when:
+      blue: 870
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '871'
+    when:
+      blue: 871
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '872'
+    when:
+      blue: 872
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '873'
+    when:
+      blue: 873
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '874'
+    when:
+      blue: 874
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '875'
+    when:
+      blue: 875
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '876'
+    when:
+      blue: 876
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '877'
+    when:
+      blue: 877
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '878'
+    when:
+      blue: 878
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '879'
+    when:
+      blue: 879
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '880'
+    when:
+      blue: 880
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '881'
+    when:
+      blue: 881
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '882'
+    when:
+      blue: 882
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '883'
+    when:
+      blue: 883
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '884'
+    when:
+      blue: 884
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '885'
+    when:
+      blue: 885
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '886'
+    when:
+      blue: 886
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '887'
+    when:
+      blue: 887
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '888'
+    when:
+      blue: 888
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '889'
+    when:
+      blue: 889
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '890'
+    when:
+      blue: 890
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '891'
+    when:
+      blue: 891
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '892'
+    when:
+      blue: 892
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '893'
+    when:
+      blue: 893
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '894'
+    when:
+      blue: 894
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '895'
+    when:
+      blue: 895
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '896'
+    when:
+      blue: 896
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '897'
+    when:
+      blue: 897
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '898'
+    when:
+      blue: 898
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '899'
+    when:
+      blue: 899
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '900'
+    when:
+      blue: 900
+      black: 8
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: '???'
+    when:
+      blue: '*'
+      black: 6
+      red: '*'
+      green: '*'
+      image: null
+    image: null
+  - text: 0-0
+    when:
+      blue: 0
+      black: '*'
+      red: 0
+      green: '*'
+      image: null
+    image: null
+  - text: 0-1
+    when:
+      blue: 0
+      black: '*'
+      red: 1
+      green: '*'
+      image: null
+    image: null
+  - text: 0-2
+    when:
+      blue: 0
+      black: '*'
+      red: 2
+      green: '*'
+      image: null
+    image: null
+  - text: 0-3
+    when:
+      blue: 0
+      black: '*'
+      red: 3
+      green: '*'
+      image: null
+    image: null
+  - text: 0-4
+    when:
+      blue: 0
+      black: '*'
+      red: 4
+      green: '*'
+      image: null
+    image: null
+  - text: 0-5
+    when:
+      blue: 0
+      black: '*'
+      red: 5
+      green: '*'
+      image: null
+    image: null
+  - text: 0-6
+    when:
+      blue: 0
+      black: '*'
+      red: 6
+      green: '*'
+      image: null
+    image: null
+  - text: 0-7
+    when:
+      blue: 0
+      black: '*'
+      red: 7
+      green: '*'
+      image: null
+    image: null
+  - text: 0-8
+    when:
+      blue: 0
+      black: '*'
+      red: 8
+      green: '*'
+      image: null
+    image: null
+  - text: 0-9
+    when:
+      blue: 0
+      black: '*'
+      red: 9
+      green: '*'
+      image: null
+    image: null
+  - text: 0-10
+    when:
+      blue: 0
+      black: '*'
+      red: 10
+      green: '*'
+      image: null
+    image: null
+  - text: 0-11
+    when:
+      blue: 0
+      black: '*'
+      red: 11
+      green: '*'
+      image: null
+    image: null
+  - text: 0-12
+    when:
+      blue: 0
+      black: '*'
+      red: 12
+      green: '*'
+      image: null
+    image: null
+  - text: 0-13
+    when:
+      blue: 0
+      black: '*'
+      red: 13
+      green: '*'
+      image: null
+    image: null
+  - text: 0-14
+    when:
+      blue: 0
+      black: '*'
+      red: 14
+      green: '*'
+      image: null
+    image: null
+  - text: 0-15
+    when:
+      blue: 0
+      black: '*'
+      red: 15
+      green: '*'
+      image: null
+    image: null
+  - text: 0-16
+    when:
+      blue: 0
+      black: '*'
+      red: 16
+      green: '*'
+      image: null
+    image: null
+  - text: 0-17
+    when:
+      blue: 0
+      black: '*'
+      red: 17
+      green: '*'
+      image: null
+    image: null
+  - text: 0-18
+    when:
+      blue: 0
+      black: '*'
+      red: 18
+      green: '*'
+      image: null
+    image: null
+  - text: 0-19
+    when:
+      blue: 0
+      black: '*'
+      red: 19
+      green: '*'
+      image: null
+    image: null
+  - text: 0-20
+    when:
+      blue: 0
+      black: '*'
+      red: 20
+      green: '*'
+      image: null
+    image: null
+  - text: 1-1
+    when:
+      blue: 1
+      black: '*'
+      red: 1
+      green: '*'
+      image: null
+    image: null
+  - text: 1-2
+    when:
+      blue: 1
+      black: '*'
+      red: 2
+      green: '*'
+      image: null
+    image: null
+  - text: 1-3
+    when:
+      blue: 1
+      black: '*'
+      red: 3
+      green: '*'
+      image: null
+    image: null
+  - text: 1-4
+    when:
+      blue: 1
+      black: '*'
+      red: 4
+      green: '*'
+      image: null
+    image: null
+  - text: 1-5
+    when:
+      blue: 1
+      black: '*'
+      red: 5
+      green: '*'
+      image: null
+    image: null
+  - text: 1-6
+    when:
+      blue: 1
+      black: '*'
+      red: 6
+      green: '*'
+      image: null
+    image: null
+  - text: 1-7
+    when:
+      blue: 1
+      black: '*'
+      red: 7
+      green: '*'
+      image: null
+    image: null
+  - text: 1-8
+    when:
+      blue: 1
+      black: '*'
+      red: 8
+      green: '*'
+      image: null
+    image: null
+  - text: 1-9
+    when:
+      blue: 1
+      black: '*'
+      red: 9
+      green: '*'
+      image: null
+    image: null
+  - text: 1-10
+    when:
+      blue: 1
+      black: '*'
+      red: 10
+      green: '*'
+      image: null
+    image: null
+  - text: 1-11
+    when:
+      blue: 1
+      black: '*'
+      red: 11
+      green: '*'
+      image: null
+    image: null
+  - text: 1-12
+    when:
+      blue: 1
+      black: '*'
+      red: 12
+      green: '*'
+      image: null
+    image: null
+  - text: 1-13
+    when:
+      blue: 1
+      black: '*'
+      red: 13
+      green: '*'
+      image: null
+    image: null
+  - text: 1-14
+    when:
+      blue: 1
+      black: '*'
+      red: 14
+      green: '*'
+      image: null
+    image: null
+  - text: 1-15
+    when:
+      blue: 1
+      black: '*'
+      red: 15
+      green: '*'
+      image: null
+    image: null
+  - text: 1-16
+    when:
+      blue: 1
+      black: '*'
+      red: 16
+      green: '*'
+      image: null
+    image: null
+  - text: 1-17
+    when:
+      blue: 1
+      black: '*'
+      red: 17
+      green: '*'
+      image: null
+    image: null
+  - text: 1-18
+    when:
+      blue: 1
+      black: '*'
+      red: 18
+      green: '*'
+      image: null
+    image: null
+  - text: 1-19
+    when:
+      blue: 1
+      black: '*'
+      red: 19
+      green: '*'
+      image: null
+    image: null
+  - text: 1-20
+    when:
+      blue: 1
+      black: '*'
+      red: 20
+      green: '*'
+      image: null
+    image: null
+  - text: 2-1
+    when:
+      blue: 2
+      black: '*'
+      red: 1
+      green: '*'
+      image: null
+    image: null
+  - text: 2-2
+    when:
+      blue: 2
+      black: '*'
+      red: 2
+      green: '*'
+      image: null
+    image: null
+  - text: 2-3
+    when:
+      blue: 2
+      black: '*'
+      red: 3
+      green: '*'
+      image: null
+    image: null
+  - text: 2-4
+    when:
+      blue: 2
+      black: '*'
+      red: 4
+      green: '*'
+      image: null
+    image: null
+  - text: 2-5
+    when:
+      blue: 2
+      black: '*'
+      red: 5
+      green: '*'
+      image: null
+    image: null
+  - text: 2-6
+    when:
+      blue: 2
+      black: '*'
+      red: 6
+      green: '*'
+      image: null
+    image: null
+  - text: 2-7
+    when:
+      blue: 2
+      black: '*'
+      red: 7
+      green: '*'
+      image: null
+    image: null
+  - text: 2-8
+    when:
+      blue: 2
+      black: '*'
+      red: 8
+      green: '*'
+      image: null
+    image: null
+  - text: 2-9
+    when:
+      blue: 2
+      black: '*'
+      red: 9
+      green: '*'
+      image: null
+    image: null
+  - text: 2-10
+    when:
+      blue: 2
+      black: '*'
+      red: 10
+      green: '*'
+      image: null
+    image: null
+  - text: 2-11
+    when:
+      blue: 2
+      black: '*'
+      red: 11
+      green: '*'
+      image: null
+    image: null
+  - text: 2-12
+    when:
+      blue: 2
+      black: '*'
+      red: 12
+      green: '*'
+      image: null
+    image: null
+  - text: 2-13
+    when:
+      blue: 2
+      black: '*'
+      red: 13
+      green: '*'
+      image: null
+    image: null
+  - text: 2-14
+    when:
+      blue: 2
+      black: '*'
+      red: 14
+      green: '*'
+      image: null
+    image: null
+  - text: 2-15
+    when:
+      blue: 2
+      black: '*'
+      red: 15
+      green: '*'
+      image: null
+    image: null
+  - text: 2-16
+    when:
+      blue: 2
+      black: '*'
+      red: 16
+      green: '*'
+      image: null
+    image: null
+  - text: 2-17
+    when:
+      blue: 2
+      black: '*'
+      red: 17
+      green: '*'
+      image: null
+    image: null
+  - text: 2-18
+    when:
+      blue: 2
+      black: '*'
+      red: 18
+      green: '*'
+      image: null
+    image: null
+  - text: 2-19
+    when:
+      blue: 2
+      black: '*'
+      red: 19
+      green: '*'
+      image: null
+    image: null
+  - text: 3-20
+    when:
+      blue: 2
+      black: '*'
+      red: 20
+      green: '*'
+      image: null
+    image: null
+  - text: 3-1
+    when:
+      blue: 3
+      black: '*'
+      red: 1
+      green: '*'
+      image: null
+    image: null
+  - text: 3-2
+    when:
+      blue: 3
+      black: '*'
+      red: 2
+      green: '*'
+      image: null
+    image: null
+  - text: 3-3
+    when:
+      blue: 3
+      black: '*'
+      red: 3
+      green: '*'
+      image: null
+    image: null
+  - text: 3-4
+    when:
+      blue: 3
+      black: '*'
+      red: 4
+      green: '*'
+      image: null
+    image: null
+  - text: 3-5
+    when:
+      blue: 3
+      black: '*'
+      red: 5
+      green: '*'
+      image: null
+    image: null
+  - text: 3-6
+    when:
+      blue: 3
+      black: '*'
+      red: 6
+      green: '*'
+      image: null
+    image: null
+  - text: 3-7
+    when:
+      blue: 3
+      black: '*'
+      red: 7
+      green: '*'
+      image: null
+    image: null
+  - text: 3-8
+    when:
+      blue: 3
+      black: '*'
+      red: 8
+      green: '*'
+      image: null
+    image: null
+  - text: 3-9
+    when:
+      blue: 3
+      black: '*'
+      red: 9
+      green: '*'
+      image: null
+    image: null
+  - text: 3-10
+    when:
+      blue: 3
+      black: '*'
+      red: 10
+      green: '*'
+      image: null
+    image: null
+  - text: 3-11
+    when:
+      blue: 3
+      black: '*'
+      red: 11
+      green: '*'
+      image: null
+    image: null
+  - text: 3-12
+    when:
+      blue: 3
+      black: '*'
+      red: 12
+      green: '*'
+      image: null
+    image: null
+  - text: 3-13
+    when:
+      blue: 3
+      black: '*'
+      red: 13
+      green: '*'
+      image: null
+    image: null
+  - text: 3-14
+    when:
+      blue: 3
+      black: '*'
+      red: 14
+      green: '*'
+      image: null
+    image: null
+  - text: 3-15
+    when:
+      blue: 3
+      black: '*'
+      red: 15
+      green: '*'
+      image: null
+    image: null
+  - text: 3-16
+    when:
+      blue: 3
+      black: '*'
+      red: 16
+      green: '*'
+      image: null
+    image: null
+  - text: 3-17
+    when:
+      blue: 3
+      black: '*'
+      red: 17
+      green: '*'
+      image: null
+    image: null
+  - text: 3-18
+    when:
+      blue: 3
+      black: '*'
+      red: 18
+      green: '*'
+      image: null
+    image: null
+  - text: 3-19
+    when:
+      blue: 3
+      black: '*'
+      red: 19
+      green: '*'
+      image: null
+    image: null
+  - text: 3-20
+    when:
+      blue: 3
+      black: '*'
+      red: 20
+      green: '*'
+      image: null
+    image: null
+  - text: 4-1
+    when:
+      blue: 4
+      black: '*'
+      red: 1
+      green: '*'
+      image: null
+    image: null
+  - text: 4-2
+    when:
+      blue: 4
+      black: '*'
+      red: 2
+      green: '*'
+      image: null
+    image: null
+  - text: 4-3
+    when:
+      blue: 4
+      black: '*'
+      red: 3
+      green: '*'
+      image: null
+    image: null
+  - text: 4-4
+    when:
+      blue: 4
+      black: '*'
+      red: 4
+      green: '*'
+      image: null
+    image: null
+  - text: 4-5
+    when:
+      blue: 4
+      black: '*'
+      red: 5
+      green: '*'
+      image: null
+    image: null
+  - text: 4-6
+    when:
+      blue: 4
+      black: '*'
+      red: 6
+      green: '*'
+      image: null
+    image: null
+  - text: 4-7
+    when:
+      blue: 4
+      black: '*'
+      red: 7
+      green: '*'
+      image: null
+    image: null
+  - text: 4-8
+    when:
+      blue: 4
+      black: '*'
+      red: 8
+      green: '*'
+      image: null
+    image: null
+  - text: 4-9
+    when:
+      blue: 4
+      black: '*'
+      red: 9
+      green: '*'
+      image: null
+    image: null
+  - text: 4-10
+    when:
+      blue: 4
+      black: '*'
+      red: 10
+      green: '*'
+      image: null
+    image: null
+  - text: 4-11
+    when:
+      blue: 4
+      black: '*'
+      red: 11
+      green: '*'
+      image: null
+    image: null
+  - text: 4-12
+    when:
+      blue: 4
+      black: '*'
+      red: 12
+      green: '*'
+      image: null
+    image: null
+  - text: 4-13
+    when:
+      blue: 4
+      black: '*'
+      red: 13
+      green: '*'
+      image: null
+    image: null
+  - text: 4-14
+    when:
+      blue: 4
+      black: '*'
+      red: 14
+      green: '*'
+      image: null
+    image: null
+  - text: 4-15
+    when:
+      blue: 4
+      black: '*'
+      red: 15
+      green: '*'
+      image: null
+    image: null
+  - text: 4-16
+    when:
+      blue: 4
+      black: '*'
+      red: 16
+      green: '*'
+      image: null
+    image: null
+  - text: 4-17
+    when:
+      blue: 4
+      black: '*'
+      red: 17
+      green: '*'
+      image: null
+    image: null
+  - text: 4-18
+    when:
+      blue: 4
+      black: '*'
+      red: 18
+      green: '*'
+      image: null
+    image: null
+  - text: 4-19
+    when:
+      blue: 4
+      black: '*'
+      red: 19
+      green: '*'
+      image: null
+    image: null
+  - text: 4-20
+    when:
+      blue: 4
+      black: '*'
+      red: 20
+      green: '*'
+      image: null
+    image: null
+  - text: 5-1
+    when:
+      blue: 5
+      black: '*'
+      red: 1
+      green: '*'
+      image: null
+    image: null
+  - text: 5-2
+    when:
+      blue: 5
+      black: '*'
+      red: 2
+      green: '*'
+      image: null
+    image: null
+  - text: 5-3
+    when:
+      blue: 5
+      black: '*'
+      red: 3
+      green: '*'
+      image: null
+    image: null
+  - text: 5-4
+    when:
+      blue: 5
+      black: '*'
+      red: 4
+      green: '*'
+      image: null
+    image: null
+  - text: 5-5
+    when:
+      blue: 5
+      black: '*'
+      red: 5
+      green: '*'
+      image: null
+    image: null
+  - text: 5-6
+    when:
+      blue: 5
+      black: '*'
+      red: 6
+      green: '*'
+      image: null
+    image: null
+  - text: 5-7
+    when:
+      blue: 5
+      black: '*'
+      red: 7
+      green: '*'
+      image: null
+    image: null
+  - text: 5-8
+    when:
+      blue: 5
+      black: '*'
+      red: 8
+      green: '*'
+      image: null
+    image: null
+  - text: 5-9
+    when:
+      blue: 5
+      black: '*'
+      red: 9
+      green: '*'
+      image: null
+    image: null
+  - text: 5-10
+    when:
+      blue: 5
+      black: '*'
+      red: 10
+      green: '*'
+      image: null
+    image: null
+  - text: 5-11
+    when:
+      blue: 5
+      black: '*'
+      red: 11
+      green: '*'
+      image: null
+    image: null
+  - text: 5-12
+    when:
+      blue: 5
+      black: '*'
+      red: 12
+      green: '*'
+      image: null
+    image: null
+  - text: 5-13
+    when:
+      blue: 5
+      black: '*'
+      red: 13
+      green: '*'
+      image: null
+    image: null
+  - text: 5-14
+    when:
+      blue: 5
+      black: '*'
+      red: 14
+      green: '*'
+      image: null
+    image: null
+  - text: 5-15
+    when:
+      blue: 5
+      black: '*'
+      red: 15
+      green: '*'
+      image: null
+    image: null
+  - text: 5-16
+    when:
+      blue: 5
+      black: '*'
+      red: 16
+      green: '*'
+      image: null
+    image: null
+  - text: 5-17
+    when:
+      blue: 5
+      black: '*'
+      red: 17
+      green: '*'
+      image: null
+    image: null
+  - text: 5-18
+    when:
+      blue: 5
+      black: '*'
+      red: 18
+      green: '*'
+      image: null
+    image: null
+  - text: 5-19
+    when:
+      blue: 5
+      black: '*'
+      red: 19
+      green: '*'
+      image: null
+    image: null
+  - text: 5-20
+    when:
+      blue: 5
+      black: '*'
+      red: 20
+      green: '*'
+      image: null
+    image: null
+  - text: 6-1
+    when:
+      blue: 6
+      black: '*'
+      red: 1
+      green: '*'
+      image: null
+    image: null
+  - text: 6-2
+    when:
+      blue: 6
+      black: '*'
+      red: 2
+      green: '*'
+      image: null
+    image: null
+  - text: 6-3
+    when:
+      blue: 6
+      black: '*'
+      red: 3
+      green: '*'
+      image: null
+    image: null
+  - text: 6-4
+    when:
+      blue: 6
+      black: '*'
+      red: 4
+      green: '*'
+      image: null
+    image: null
+  - text: 6-5
+    when:
+      blue: 6
+      black: '*'
+      red: 5
+      green: '*'
+      image: null
+    image: null
+  - text: 6-6
+    when:
+      blue: 6
+      black: '*'
+      red: 6
+      green: '*'
+      image: null
+    image: null
+  - text: 6-7
+    when:
+      blue: 6
+      black: '*'
+      red: 7
+      green: '*'
+      image: null
+    image: null
+  - text: 6-8
+    when:
+      blue: 6
+      black: '*'
+      red: 8
+      green: '*'
+      image: null
+    image: null
+  - text: 6-9
+    when:
+      blue: 6
+      black: '*'
+      red: 9
+      green: '*'
+      image: null
+    image: null
+  - text: 6-10
+    when:
+      blue: 6
+      black: '*'
+      red: 10
+      green: '*'
+      image: null
+    image: null
+  - text: 6-11
+    when:
+      blue: 6
+      black: '*'
+      red: 11
+      green: '*'
+      image: null
+    image: null
+  - text: 6-12
+    when:
+      blue: 6
+      black: '*'
+      red: 12
+      green: '*'
+      image: null
+    image: null
+  - text: 6-13
+    when:
+      blue: 6
+      black: '*'
+      red: 13
+      green: '*'
+      image: null
+    image: null
+  - text: 6-14
+    when:
+      blue: 6
+      black: '*'
+      red: 14
+      green: '*'
+      image: null
+    image: null
+  - text: 6-15
+    when:
+      blue: 6
+      black: '*'
+      red: 15
+      green: '*'
+      image: null
+    image: null
+  - text: 6-16
+    when:
+      blue: 6
+      black: '*'
+      red: 16
+      green: '*'
+      image: null
+    image: null
+  - text: 6-17
+    when:
+      blue: 6
+      black: '*'
+      red: 17
+      green: '*'
+      image: null
+    image: null
+  - text: 6-18
+    when:
+      blue: 6
+      black: '*'
+      red: 18
+      green: '*'
+      image: null
+    image: null
+  - text: 6-19
+    when:
+      blue: 6
+      black: '*'
+      red: 19
+      green: '*'
+      image: null
+    image: null
+  - text: 6-20
+    when:
+      blue: 6
+      black: '*'
+      red: 20
+      green: '*'
+      image: null
+    image: null
+  - text: 7-1
+    when:
+      blue: 7
+      black: '*'
+      red: 1
+      green: '*'
+      image: null
+    image: null
+  - text: 7-2
+    when:
+      blue: 7
+      black: '*'
+      red: 2
+      green: '*'
+      image: null
+    image: null
+  - text: 7-3
+    when:
+      blue: 7
+      black: '*'
+      red: 3
+      green: '*'
+      image: null
+    image: null
+  - text: 7-4
+    when:
+      blue: 7
+      black: '*'
+      red: 4
+      green: '*'
+      image: null
+    image: null
+  - text: 7-5
+    when:
+      blue: 7
+      black: '*'
+      red: 5
+      green: '*'
+      image: null
+    image: null
+  - text: 7-6
+    when:
+      blue: 7
+      black: '*'
+      red: 6
+      green: '*'
+      image: null
+    image: null
+  - text: 7-7
+    when:
+      blue: 7
+      black: '*'
+      red: 7
+      green: '*'
+      image: null
+    image: null
+  - text: 7-8
+    when:
+      blue: 7
+      black: '*'
+      red: 8
+      green: '*'
+      image: null
+    image: null
+  - text: 7-9
+    when:
+      blue: 7
+      black: '*'
+      red: 9
+      green: '*'
+      image: null
+    image: null
+  - text: 7-10
+    when:
+      blue: 7
+      black: '*'
+      red: 10
+      green: '*'
+      image: null
+    image: null
+  - text: 7-11
+    when:
+      blue: 7
+      black: '*'
+      red: 11
+      green: '*'
+      image: null
+    image: null
+  - text: 7-12
+    when:
+      blue: 7
+      black: '*'
+      red: 12
+      green: '*'
+      image: null
+    image: null
+  - text: 7-13
+    when:
+      blue: 7
+      black: '*'
+      red: 13
+      green: '*'
+      image: null
+    image: null
+  - text: 7-14
+    when:
+      blue: 7
+      black: '*'
+      red: 14
+      green: '*'
+      image: null
+    image: null
+  - text: 7-15
+    when:
+      blue: 7
+      black: '*'
+      red: 15
+      green: '*'
+      image: null
+    image: null
+  - text: 7-16
+    when:
+      blue: 7
+      black: '*'
+      red: 16
+      green: '*'
+      image: null
+    image: null
+  - text: 7-17
+    when:
+      blue: 7
+      black: '*'
+      red: 17
+      green: '*'
+      image: null
+    image: null
+  - text: 7-18
+    when:
+      blue: 7
+      black: '*'
+      red: 18
+      green: '*'
+      image: null
+    image: null
+  - text: 7-19
+    when:
+      blue: 7
+      black: '*'
+      red: 19
+      green: '*'
+      image: null
+    image: null
+  - text: 7-20
+    when:
+      blue: 7
+      black: '*'
+      red: 20
+      green: '*'
+      image: null
+    image: null
+  - text: 8-1
+    when:
+      blue: 8
+      black: '*'
+      red: 1
+      green: '*'
+      image: null
+    image: null
+  - text: 8-2
+    when:
+      blue: 8
+      black: '*'
+      red: 2
+      green: '*'
+      image: null
+    image: null
+  - text: 8-3
+    when:
+      blue: 8
+      black: '*'
+      red: 3
+      green: '*'
+      image: null
+    image: null
+  - text: 8-4
+    when:
+      blue: 8
+      black: '*'
+      red: 4
+      green: '*'
+      image: null
+    image: null
+  - text: 8-5
+    when:
+      blue: 8
+      black: '*'
+      red: 5
+      green: '*'
+      image: null
+    image: null
+  - text: 8-6
+    when:
+      blue: 8
+      black: '*'
+      red: 6
+      green: '*'
+      image: null
+    image: null
+  - text: 8-7
+    when:
+      blue: 8
+      black: '*'
+      red: 7
+      green: '*'
+      image: null
+    image: null
+  - text: 8-8
+    when:
+      blue: 8
+      black: '*'
+      red: 8
+      green: '*'
+      image: null
+    image: null
+  - text: 8-9
+    when:
+      blue: 8
+      black: '*'
+      red: 9
+      green: '*'
+      image: null
+    image: null
+  - text: 8-10
+    when:
+      blue: 8
+      black: '*'
+      red: 10
+      green: '*'
+      image: null
+    image: null
+  - text: 8-11
+    when:
+      blue: 8
+      black: '*'
+      red: 11
+      green: '*'
+      image: null
+    image: null
+  - text: 8-12
+    when:
+      blue: 8
+      black: '*'
+      red: 12
+      green: '*'
+      image: null
+    image: null
+  - text: 8-13
+    when:
+      blue: 8
+      black: '*'
+      red: 13
+      green: '*'
+      image: null
+    image: null
+  - text: 8-14
+    when:
+      blue: 8
+      black: '*'
+      red: 14
+      green: '*'
+      image: null
+    image: null
+  - text: 8-15
+    when:
+      blue: 8
+      black: '*'
+      red: 15
+      green: '*'
+      image: null
+    image: null
+  - text: 8-16
+    when:
+      blue: 8
+      black: '*'
+      red: 16
+      green: '*'
+      image: null
+    image: null
+  - text: 8-17
+    when:
+      blue: 8
+      black: '*'
+      red: 17
+      green: '*'
+      image: null
+    image: null
+  - text: 8-18
+    when:
+      blue: 8
+      black: '*'
+      red: 18
+      green: '*'
+      image: null
+    image: null
+  - text: 8-19
+    when:
+      blue: 8
+      black: '*'
+      red: 19
+      green: '*'
+      image: null
+    image: null
+  - text: 8-20
+    when:
+      blue: 8
+      black: '*'
+      red: 20
+      green: '*'
+      image: null
+    image: null
+  - text: 9-1
+    when:
+      blue: 9
+      black: '*'
+      red: 1
+      green: '*'
+      image: null
+    image: null
+  - text: 9-2
+    when:
+      blue: 9
+      black: '*'
+      red: 2
+      green: '*'
+      image: null
+    image: null
+  - text: 9-3
+    when:
+      blue: 9
+      black: '*'
+      red: 3
+      green: '*'
+      image: null
+    image: null
+  - text: 9-4
+    when:
+      blue: 9
+      black: '*'
+      red: 4
+      green: '*'
+      image: null
+    image: null
+  - text: 9-5
+    when:
+      blue: 9
+      black: '*'
+      red: 5
+      green: '*'
+      image: null
+    image: null
+  - text: 9-6
+    when:
+      blue: 9
+      black: '*'
+      red: 6
+      green: '*'
+      image: null
+    image: null
+  - text: 9-7
+    when:
+      blue: 9
+      black: '*'
+      red: 7
+      green: '*'
+      image: null
+    image: null
+  - text: 9-8
+    when:
+      blue: 9
+      black: '*'
+      red: 8
+      green: '*'
+      image: null
+    image: null
+  - text: 9-9
+    when:
+      blue: 9
+      black: '*'
+      red: 9
+      green: '*'
+      image: null
+    image: null
+  - text: 9-10
+    when:
+      blue: 9
+      black: '*'
+      red: 10
+      green: '*'
+      image: null
+    image: null
+  - text: 9-11
+    when:
+      blue: 9
+      black: '*'
+      red: 11
+      green: '*'
+      image: null
+    image: null
+  - text: 9-12
+    when:
+      blue: 9
+      black: '*'
+      red: 12
+      green: '*'
+      image: null
+    image: null
+  - text: 9-13
+    when:
+      blue: 9
+      black: '*'
+      red: 13
+      green: '*'
+      image: null
+    image: null
+  - text: 9-14
+    when:
+      blue: 9
+      black: '*'
+      red: 14
+      green: '*'
+      image: null
+    image: null
+  - text: 9-15
+    when:
+      blue: 9
+      black: '*'
+      red: 15
+      green: '*'
+      image: null
+    image: null
+  - text: 9-16
+    when:
+      blue: 9
+      black: '*'
+      red: 16
+      green: '*'
+      image: null
+    image: null
+  - text: 9-17
+    when:
+      blue: 9
+      black: '*'
+      red: 17
+      green: '*'
+      image: null
+    image: null
+  - text: 9-18
+    when:
+      blue: 9
+      black: '*'
+      red: 18
+      green: '*'
+      image: null
+    image: null
+  - text: 9-19
+    when:
+      blue: 9
+      black: '*'
+      red: 19
+      green: '*'
+      image: null
+    image: null
+  - text: 9-20
+    when:
+      blue: 9
+      black: '*'
+      red: 20
+      green: '*'
+      image: null
+    image: null
+  - text: 10-1
+    when:
+      blue: 10
+      black: '*'
+      red: 1
+      green: '*'
+      image: null
+    image: null
+  - text: 10-2
+    when:
+      blue: 10
+      black: '*'
+      red: 2
+      green: '*'
+      image: null
+    image: null
+  - text: 10-3
+    when:
+      blue: 10
+      black: '*'
+      red: 3
+      green: '*'
+      image: null
+    image: null
+  - text: 10-4
+    when:
+      blue: 10
+      black: '*'
+      red: 4
+      green: '*'
+      image: null
+    image: null
+  - text: 10-5
+    when:
+      blue: 10
+      black: '*'
+      red: 5
+      green: '*'
+      image: null
+    image: null
+  - text: 10-6
+    when:
+      blue: 10
+      black: '*'
+      red: 6
+      green: '*'
+      image: null
+    image: null
+  - text: 10-7
+    when:
+      blue: 10
+      black: '*'
+      red: 7
+      green: '*'
+      image: null
+    image: null
+  - text: 10-8
+    when:
+      blue: 10
+      black: '*'
+      red: 8
+      green: '*'
+      image: null
+    image: null
+  - text: 10-9
+    when:
+      blue: 10
+      black: '*'
+      red: 9
+      green: '*'
+      image: null
+    image: null
+  - text: 10-10
+    when:
+      blue: 10
+      black: '*'
+      red: 10
+      green: '*'
+      image: null
+    image: null
+  - text: 10-11
+    when:
+      blue: 10
+      black: '*'
+      red: 11
+      green: '*'
+      image: null
+    image: null
+  - text: 10-12
+    when:
+      blue: 10
+      black: '*'
+      red: 12
+      green: '*'
+      image: null
+    image: null
+  - text: 10-13
+    when:
+      blue: 10
+      black: '*'
+      red: 13
+      green: '*'
+      image: null
+    image: null
+  - text: 10-14
+    when:
+      blue: 10
+      black: '*'
+      red: 14
+      green: '*'
+      image: null
+    image: null
+  - text: 10-15
+    when:
+      blue: 10
+      black: '*'
+      red: 15
+      green: '*'
+      image: null
+    image: null
+  - text: 10-16
+    when:
+      blue: 10
+      black: '*'
+      red: 16
+      green: '*'
+      image: null
+    image: null
+  - text: 10-17
+    when:
+      blue: 10
+      black: '*'
+      red: 17
+      green: '*'
+      image: null
+    image: null
+  - text: 10-18
+    when:
+      blue: 10
+      black: '*'
+      red: 18
+      green: '*'
+      image: null
+    image: null
+  - text: 10-19
+    when:
+      blue: 10
+      black: '*'
+      red: 19
+      green: '*'
+      image: null
+    image: null
+  - text: 10-20
+    when:
+      blue: 10
+      black: '*'
+      red: 20
+      green: '*'
+      image: null
+    image: null
+  - text: 11-1
+    when:
+      blue: 11
+      black: '*'
+      red: 1
+      green: '*'
+      image: null
+    image: null
+  - text: 11-2
+    when:
+      blue: 11
+      black: '*'
+      red: 2
+      green: '*'
+      image: null
+    image: null
+  - text: 11-3
+    when:
+      blue: 11
+      black: '*'
+      red: 3
+      green: '*'
+      image: null
+    image: null
+  - text: 11-4
+    when:
+      blue: 11
+      black: '*'
+      red: 4
+      green: '*'
+      image: null
+    image: null
+  - text: 11-5
+    when:
+      blue: 11
+      black: '*'
+      red: 5
+      green: '*'
+      image: null
+    image: null
+  - text: 11-6
+    when:
+      blue: 11
+      black: '*'
+      red: 6
+      green: '*'
+      image: null
+    image: null
+  - text: 11-7
+    when:
+      blue: 11
+      black: '*'
+      red: 7
+      green: '*'
+      image: null
+    image: null
+  - text: 11-8
+    when:
+      blue: 11
+      black: '*'
+      red: 8
+      green: '*'
+      image: null
+    image: null
+  - text: 11-9
+    when:
+      blue: 11
+      black: '*'
+      red: 9
+      green: '*'
+      image: null
+    image: null
+  - text: 11-10
+    when:
+      blue: 11
+      black: '*'
+      red: 10
+      green: '*'
+      image: null
+    image: null
+  - text: 11-11
+    when:
+      blue: 11
+      black: '*'
+      red: 11
+      green: '*'
+      image: null
+    image: null
+  - text: 11-12
+    when:
+      blue: 11
+      black: '*'
+      red: 12
+      green: '*'
+      image: null
+    image: null
+  - text: 11-13
+    when:
+      blue: 11
+      black: '*'
+      red: 13
+      green: '*'
+      image: null
+    image: null
+  - text: 11-14
+    when:
+      blue: 11
+      black: '*'
+      red: 14
+      green: '*'
+      image: null
+    image: null
+  - text: 11-15
+    when:
+      blue: 11
+      black: '*'
+      red: 15
+      green: '*'
+      image: null
+    image: null
+  - text: 11-16
+    when:
+      blue: 11
+      black: '*'
+      red: 16
+      green: '*'
+      image: null
+    image: null
+  - text: 11-17
+    when:
+      blue: 11
+      black: '*'
+      red: 17
+      green: '*'
+      image: null
+    image: null
+  - text: 11-18
+    when:
+      blue: 11
+      black: '*'
+      red: 18
+      green: '*'
+      image: null
+    image: null
+  - text: 11-19
+    when:
+      blue: 11
+      black: '*'
+      red: 19
+      green: '*'
+      image: null
+    image: null
+  - text: 11-20
+    when:
+      blue: 11
+      black: '*'
+      red: 20
+      green: '*'
+      image: null
+    image: null
+  - text: 12-1
+    when:
+      blue: 12
+      black: '*'
+      red: 1
+      green: '*'
+      image: null
+    image: null
+  - text: 12-2
+    when:
+      blue: 12
+      black: '*'
+      red: 2
+      green: '*'
+      image: null
+    image: null
+  - text: 12-3
+    when:
+      blue: 12
+      black: '*'
+      red: 3
+      green: '*'
+      image: null
+    image: null
+  - text: 12-4
+    when:
+      blue: 12
+      black: '*'
+      red: 4
+      green: '*'
+      image: null
+    image: null
+  - text: 12-5
+    when:
+      blue: 12
+      black: '*'
+      red: 5
+      green: '*'
+      image: null
+    image: null
+  - text: 12-6
+    when:
+      blue: 12
+      black: '*'
+      red: 6
+      green: '*'
+      image: null
+    image: null
+  - text: 12-7
+    when:
+      blue: 12
+      black: '*'
+      red: 7
+      green: '*'
+      image: null
+    image: null
+  - text: 12-8
+    when:
+      blue: 12
+      black: '*'
+      red: 8
+      green: '*'
+      image: null
+    image: null
+  - text: 12-9
+    when:
+      blue: 12
+      black: '*'
+      red: 9
+      green: '*'
+      image: null
+    image: null
+  - text: 12-10
+    when:
+      blue: 12
+      black: '*'
+      red: 10
+      green: '*'
+      image: null
+    image: null
+  - text: 12-11
+    when:
+      blue: 12
+      black: '*'
+      red: 11
+      green: '*'
+      image: null
+    image: null
+  - text: 12-12
+    when:
+      blue: 12
+      black: '*'
+      red: 12
+      green: '*'
+      image: null
+    image: null
+  - text: 12-13
+    when:
+      blue: 12
+      black: '*'
+      red: 13
+      green: '*'
+      image: null
+    image: null
+  - text: 12-14
+    when:
+      blue: 12
+      black: '*'
+      red: 14
+      green: '*'
+      image: null
+    image: null
+  - text: 12-15
+    when:
+      blue: 12
+      black: '*'
+      red: 15
+      green: '*'
+      image: null
+    image: null
+  - text: 12-16
+    when:
+      blue: 12
+      black: '*'
+      red: 16
+      green: '*'
+      image: null
+    image: null
+  - text: 12-17
+    when:
+      blue: 12
+      black: '*'
+      red: 17
+      green: '*'
+      image: null
+    image: null
+  - text: 12-18
+    when:
+      blue: 12
+      black: '*'
+      red: 18
+      green: '*'
+      image: null
+    image: null
+  - text: 12-19
+    when:
+      blue: 12
+      black: '*'
+      red: 19
+      green: '*'
+      image: null
+    image: null
+  - text: 12-20
+    when:
+      blue: 12
+      black: '*'
+      red: 20
+      green: '*'
+      image: null
+    image: null
+  - text: 13-1
+    when:
+      blue: 13
+      black: '*'
+      red: 1
+      green: '*'
+      image: null
+    image: null
+  - text: 13-2
+    when:
+      blue: 13
+      black: '*'
+      red: 2
+      green: '*'
+      image: null
+    image: null
+  - text: 13-3
+    when:
+      blue: 13
+      black: '*'
+      red: 3
+      green: '*'
+      image: null
+    image: null
+  - text: 13-4
+    when:
+      blue: 13
+      black: '*'
+      red: 4
+      green: '*'
+      image: null
+    image: null
+  - text: 13-5
+    when:
+      blue: 13
+      black: '*'
+      red: 5
+      green: '*'
+      image: null
+    image: null
+  - text: 13-6
+    when:
+      blue: 13
+      black: '*'
+      red: 6
+      green: '*'
+      image: null
+    image: null
+  - text: 13-7
+    when:
+      blue: 13
+      black: '*'
+      red: 7
+      green: '*'
+      image: null
+    image: null
+  - text: 13-8
+    when:
+      blue: 13
+      black: '*'
+      red: 8
+      green: '*'
+      image: null
+    image: null
+  - text: 13-9
+    when:
+      blue: 13
+      black: '*'
+      red: 9
+      green: '*'
+      image: null
+    image: null
+  - text: 13-10
+    when:
+      blue: 13
+      black: '*'
+      red: 10
+      green: '*'
+      image: null
+    image: null
+  - text: 13-11
+    when:
+      blue: 13
+      black: '*'
+      red: 11
+      green: '*'
+      image: null
+    image: null
+  - text: 13-12
+    when:
+      blue: 13
+      black: '*'
+      red: 12
+      green: '*'
+      image: null
+    image: null
+  - text: 13-13
+    when:
+      blue: 13
+      black: '*'
+      red: 13
+      green: '*'
+      image: null
+    image: null
+  - text: 13-14
+    when:
+      blue: 13
+      black: '*'
+      red: 14
+      green: '*'
+      image: null
+    image: null
+  - text: 13-15
+    when:
+      blue: 13
+      black: '*'
+      red: 15
+      green: '*'
+      image: null
+    image: null
+  - text: 13-16
+    when:
+      blue: 13
+      black: '*'
+      red: 16
+      green: '*'
+      image: null
+    image: null
+  - text: 13-17
+    when:
+      blue: 13
+      black: '*'
+      red: 17
+      green: '*'
+      image: null
+    image: null
+  - text: 13-18
+    when:
+      blue: 13
+      black: '*'
+      red: 18
+      green: '*'
+      image: null
+    image: null
+  - text: 13-19
+    when:
+      blue: 13
+      black: '*'
+      red: 19
+      green: '*'
+      image: null
+    image: null
+  - text: 13-20
+    when:
+      blue: 13
+      black: '*'
+      red: 20
+      green: '*'
+      image: null
+    image: null
+  - text: 14-1
+    when:
+      blue: 14
+      black: '*'
+      red: 1
+      green: '*'
+      image: null
+    image: null
+  - text: 14-2
+    when:
+      blue: 14
+      black: '*'
+      red: 2
+      green: '*'
+      image: null
+    image: null
+  - text: 14-3
+    when:
+      blue: 14
+      black: '*'
+      red: 3
+      green: '*'
+      image: null
+    image: null
+  - text: 14-4
+    when:
+      blue: 14
+      black: '*'
+      red: 4
+      green: '*'
+      image: null
+    image: null
+  - text: 14-5
+    when:
+      blue: 14
+      black: '*'
+      red: 5
+      green: '*'
+      image: null
+    image: null
+  - text: 14-6
+    when:
+      blue: 14
+      black: '*'
+      red: 6
+      green: '*'
+      image: null
+    image: null
+  - text: 14-7
+    when:
+      blue: 14
+      black: '*'
+      red: 7
+      green: '*'
+      image: null
+    image: null
+  - text: 14-8
+    when:
+      blue: 14
+      black: '*'
+      red: 8
+      green: '*'
+      image: null
+    image: null
+  - text: 14-9
+    when:
+      blue: 14
+      black: '*'
+      red: 9
+      green: '*'
+      image: null
+    image: null
+  - text: 14-10
+    when:
+      blue: 14
+      black: '*'
+      red: 10
+      green: '*'
+      image: null
+    image: null
+  - text: 14-11
+    when:
+      blue: 14
+      black: '*'
+      red: 11
+      green: '*'
+      image: null
+    image: null
+  - text: 14-12
+    when:
+      blue: 14
+      black: '*'
+      red: 12
+      green: '*'
+      image: null
+    image: null
+  - text: 14-13
+    when:
+      blue: 14
+      black: '*'
+      red: 13
+      green: '*'
+      image: null
+    image: null
+  - text: 14-14
+    when:
+      blue: 14
+      black: '*'
+      red: 14
+      green: '*'
+      image: null
+    image: null
+  - text: 14-15
+    when:
+      blue: 14
+      black: '*'
+      red: 15
+      green: '*'
+      image: null
+    image: null
+  - text: 14-16
+    when:
+      blue: 14
+      black: '*'
+      red: 16
+      green: '*'
+      image: null
+    image: null
+  - text: 14-17
+    when:
+      blue: 14
+      black: '*'
+      red: 17
+      green: '*'
+      image: null
+    image: null
+  - text: 14-18
+    when:
+      blue: 14
+      black: '*'
+      red: 18
+      green: '*'
+      image: null
+    image: null
+  - text: 14-19
+    when:
+      blue: 14
+      black: '*'
+      red: 19
+      green: '*'
+      image: null
+    image: null
+  - text: 14-20
+    when:
+      blue: 14
+      black: '*'
+      red: 20
+      green: '*'
+      image: null
+    image: null
+  - image: 0MuroIzq.jpg
+    when:
+      blue: 1
+      black: 0
+      red: 0
+      green: 1
+  - image: 0MuroDer.jpg
+    when:
+      blue: 2
+      black: 0
+      red: 0
+      green: 1
+  - image: 0EsqSupIzq.jpg
+    when:
+      blue: 2
+      black: 0
+      red: 0
+      green: 2
+  - image: 0EsqInfDer.jpg
+    when:
+      blue: 1
+      black: 0
+      red: 0
+      green: 3
+  - image: 0EsqSupDer.jpg
+    when:
+      blue: 2
+      black: 0
+      red: 0
+      green: 3
+  - image: 0Techo.jpg
+    when:
+      blue: 1
+      black: 0
+      red: 0
+      green: 4
+  - image: 0piso.jpg
+    when:
+      blue: 1
+      black: 0
+      red: 0
+      green: 5
+  - image: 0Sombra.jpg
+    when:
+      blue: 1
+      black: 0
+      red: 0
+      green: 6
+  - image: 0EsqInfIzq.jpg
+    when:
+      blue: 1
+      black: 0
+      red: 0
+      green: 2

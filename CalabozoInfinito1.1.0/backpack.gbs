@@ -1,0 +1,439 @@
+//*------------------------------------------------------*
+//╔══════════════════════════════════════════════════════╗
+//║======================================================║
+//║----------------------BIBLIOTECA----------------------║
+//║======================================================║
+//╚══════════════════════════════════════════════════════╝
+//*------------------------------------------------------*
+//
+//-Recorrido de casilleros
+//  esÚltimoCasillero()
+//  PasarAlSiguienteCasillero()
+//  esFilaSuperiorDeCasilleros() <-Equivale a un puedeMover en recorridos
+//                                  convencional
+//
+//-Recorrido
+//  esÚltimoCelda()
+//  IniciarRecorrido()
+//  PasarALaSiguienteCelda()
+//
+//-Posicionamiento en el tablero:
+//  IrACoordenada()
+//  coordenadaActual()
+//  filaActual()
+//  columnaActual()
+//
+//-Básicas:
+//  Poner__Veces
+//  Sacar__Veces
+//  Mover__Veces
+//  SacarTodas_
+//  Poner_ParaQueHaya_
+//
+//-Número a Lista:
+//  númeroALista
+//  númeroConLongitudIncluidaALista
+//  listaANúmero
+//
+//-De Listas:
+//  lista_Ordenada
+//  mínimoElementoDe_
+//  sinElMínimoElemento_
+//  elMenorEntre_Y_
+//  sinLaPrimeraApariciónDe_En_
+//  laLista_AntesDeLaPrimeraApariciónDe_
+//  laLista_DesdeLaPrimeraApariciónDe_
+//  longitudDe_
+//  contiene_A_
+//  sinRepetidos_
+//  singularSi
+//  elementosDisminuidosEn1De_
+//  cantidadDe_En_
+//  sinLosNPrimeros
+//
+//-Otro
+//  direcciónANúmero
+//
+//-Aleatorio
+//  random
+//  randomConMaximo
+//*------------------------------------------------------*
+
+//-------------------------------RECORRIDO
+
+function esÚltimaCelda() {
+    return (not (puedeMover(Norte) || puedeMover(Este)))
+}
+
+procedure IniciarRecorrido () {
+    IrAlBorde(Oeste)
+    IrAlBorde(Sur)
+}
+
+procedure PasarALaSiguienteCelda () {
+    if (puedeMover(Este)) 
+        then{Mover(Este)}
+        else{Mover(Norte)
+            IrAlBorde(Oeste)}
+}
+
+//-----------POSICIONAMIENTO EN EL 
+
+type Coordenada is record {
+    field fila
+    field columna
+}
+
+function coordenadaActual() {
+    return(Coordenada(fila <- filaActual(), columna <- columnaActual()))
+}
+
+procedure IrACoordenada (co){
+    IniciarRecorrido()
+    Mover__Veces(Norte,fila(co))
+    Mover__Veces(Este,columna(co))
+}
+
+function filaActual(){
+    c := 0
+    while(puedeMover(Sur)){
+        c := c + 1
+        Mover(Sur)
+    }
+    return(c)
+}
+
+function columnaActual(){
+    c := 0
+    while(puedeMover(Oeste)){
+        c := c + 1
+        Mover(Oeste)
+    }
+    return(c)
+}
+
+//---------------------------------BASICAS
+                                 
+procedure Poner__Veces(co, n){
+    repeat(n){Poner(co)}
+}
+
+procedure Sacar__Veces(co, n){
+    repeat(n){Sacar(co)}
+}
+
+procedure Mover__Veces(dir, n){
+    repeat(n){Mover(dir)}
+}
+
+procedure SacarTodas_(co){
+    while(hayBolitas(co))
+        {Sacar(co)}
+}
+
+procedure VaciarCelda(){
+    SacarTodas_(Rojo)
+    SacarTodas_(Negro)
+    SacarTodas_(Azul)
+    SacarTodas_(Verde)
+}
+
+procedure Poner_ParaQueHaya_(co,n){
+    SacarTodas_(co)
+    Poner__Veces(co,n)
+}
+//--------------------------NÚMERO A LISTA
+
+function númeroALista(n,cant,maxV){
+    /*PROPÓSITO: Transforma un número en una Lista de números utilizando
+    el algoritmo explicado en representación.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETROS: n es un Número que tiene la lista guardada, cant es un 
+    Número que tiene la cantidad de elementos de la lista guardada,
+    maxV es la cantidad de valores posibles que puede llegar a tener cada 
+    elemento.
+    RESULTADO: una Lista de Números.
+    OBSERVACIÓN: Se realiza un recorrido de acumulación de restos de divisiones
+    sucesivas.*/
+    dividendo := n
+    lista := []
+    while (not (dividendo == 0)) {
+        lista := [dividendo mod maxV] ++ lista //acumulo
+        dividendo := dividendo div maxV        //siguiente division
+    }
+    //se corresponde la cantidad de elementos? si no hay que rellenar con 0
+    while (not (longitudDe_(lista) == cant)) {
+        lista := [0] ++ lista
+    }
+    return(lista)
+}
+
+function númeroConLongitudIncluidaALista(n,maxV){
+    /*PROPÓSITO: Transforma un número en una Lista de números utilizando
+    el algoritmo explicado en representación.
+    PRECONDICIÓN: Ningún elemento de la lista puede ser 0.
+    PARÁMETROS: n es un Número que tiene la lista guardada, maxV es 
+    la cantidad de valores posibles que puede llegar a tener cada 
+    elemento.
+    RESULTADO: una Lista de Números.
+    OBSERVACIÓN: Se realiza un recorrido de acumulación de restos de divisiones
+    sucesivas.
+    Notese que aquí se considera que ningun elemento es 0.*/
+    dividendo := n
+    lista := []
+    while (not (dividendo == 0)) {
+        lista := [dividendo mod maxV] ++ lista //acumulo
+        dividendo := dividendo div maxV        //siguiente division
+    }
+    return(lista)
+}
+function listaANúmero(lista,maxV){
+    /*PROPÓSITO: Representa una Lista de Números dada en un solo Número.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETROS: lista es una Lista de Números que originalmente era un Lista
+    de un tipo enumerativo, maxV es la cantidad de valores que un elemento de 
+    la Lista original (de un tipo enumerativo) podía llegar a tener.
+    RESULTADO: Un Número que representa a la lista dada.
+    OBSERVACIÓN: Se realizará un recorrido de acumulación sobre la lista.*/
+    ac := 0
+    exp := longitudDe_(lista) - 1
+    foreach elemento in lista {
+        ac := ac + (elemento * (maxV^exp))
+        exp := exp - 1
+    }
+    return(ac)
+}
+
+//-----------------------------------DE LISTA
+
+function lista_Ordenada(lista){
+    /**/
+    listaOrdenada := []
+    listaDeLosQueFaltan := lista
+    while(not(esVacía(listaDeLosQueFaltan))) {
+        listaOrdenada := listaOrdenada ++ [mínimoElementoDe_(listaDeLosQueFaltan)]
+        listaDeLosQueFaltan := sinElMínimoElemento_(listaDeLosQueFaltan)
+    }
+    return(listaOrdenada)
+}
+
+function mínimoElementoDe_(lista){
+    /*PROPÓSITO: Describe el elemento mínimo de la lista dada.
+    PRECONDICIÓN: Existe al menos un elemento en la lista dada.
+    PARÁMETROS: lista es una Lista de Números.
+    RESULTADO: Un Número.
+    OBSERVACIÓN: Se realiza un recorrido sobre la lista.*/
+    mínimo := primero(lista)
+    foreach número in lista {
+        mínimo := elMenorEntre_Y_(número, mínimo)
+    }
+    return(mínimo)
+}
+
+function sinElMínimoElemento_(lista){
+    /*PROPÓSITO: Describe la lista eliminando la primera aparición del 
+    elemento mínimo.
+    PRECONDICIÓN: La lista debe ter al menos un elemento.
+    PARÁMETROS: lista es una Lista de Números.
+    RESULTADO: Una Lista de Números.*/
+    return(sinLaPrimeraApariciónDe_en_(
+        mínimoElementoDe_(lista),
+        lista))
+}
+
+
+function elMenorEntre_Y_(númeroA, númeroB) {
+    return(choose númeroA when (númeroA < númeroB)
+                  númeroB otherwise)
+}
+
+function sinLaPrimeraApariciónDe_en_(elemento, lista){
+    /*PROPÓSITO: Describe la lista dada, pero si la primer aparición del elemento
+    dado, si es que esta en la lista.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETROS: elemento es de cualquier tipo y lista es una Lista del tipo
+    del elemento dado.
+    RESULTADO: Una Lista del tipo del elemento dado.
+    OBSERVACIÓN: Usa la idea de separar la lista en dos.*/
+    
+    return(choose laLista_AntesDeLaPrimeraAparaciónDe_(lista, elemento)
+                  ++
+                  resto(laLista_DesdeLaPrimeraAparaciónDe_(lista, elemento))
+                  when (contiene_A_(lista, elemento))
+                  lista otherwise)
+}
+
+function laLista_AntesDeLaPrimeraAparaciónDe_(lista,elemento){
+    /*PROPÓSITO: Describe la lista dada hasta antes de la primera aparición
+    del elemento dado.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETROS: elemento es de cualquier tipo y lista es una Lista del tipo
+    del elemento dado.
+    RESULTADO: Una Lista del tipo de elemento dado.
+    OBSERVACIÓN: Se realiza un recorrido de busqueda con acumulación.*/
+    
+    listaDeLosQueFaltan := lista
+    listaDeLosVistos := []
+    while (not(esVacía(listaDeLosQueFaltan)) && 
+           not(primero(listaDeLosQueFaltan) == elemento)){
+        listaDeLosVistos := listaDeLosVistos ++ [primero(listaDeLosQueFaltan)]
+        listaDeLosQueFaltan := resto(listaDeLosQueFaltan)
+    }
+    return(listaDeLosVistos)
+}
+
+function laLista_DesdeLaPrimeraAparaciónDe_(lista,elemento){
+    /*PROPÓSITO: Describe la lista dada desde la primera aparición
+    del elemento dado.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETROS: elemento es de cualquier tipo y lista es una Lista del tipo
+    del elemento dado.
+    RESULTADO: Una Lista del tipo de elemento dado.
+    OBSERVACIÓN: Se realiza un recorrido de busqueda.*/
+    
+    listaDeLosQueFaltan := lista
+    while (not(esVacía(listaDeLosQueFaltan)) && 
+           not(primero(listaDeLosQueFaltan) == elemento)){
+        listaDeLosQueFaltan := resto(listaDeLosQueFaltan)
+    }
+    return(listaDeLosQueFaltan)
+}
+
+function longitudDe_(lista){
+    c := 0
+    foreach l in lista {c := c + 1}
+    return(c)
+}
+
+function contiene_A_(lista,elemento){
+    l := lista
+    while(not(esVacía(l)) && not(primero(l) == elemento)) {
+        l := resto(l)
+    }
+    return(not(esVacía(l)))
+}
+
+function sinRepetidos_(lista){
+    l := []
+    foreach e in lista {
+        l := l ++ singularSi(e, not contiene_A_(l,e))
+    }
+    return(l)
+}
+
+function singularSi(e, b){
+    return(choose [e] when (b)
+                  [] otherwise)
+}
+
+function elementosDisminuidosEn1De_(lista){
+    /*PROPÓSITO: Describe la lista dada con sus elementos disminuidos en 1.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETRO: lista es una Lista de Números.
+    RESULTADO: Una Lista de Números.
+    OBSERVACIÓN: Se realiza un recorrido de acumulación sobre la lista.*/
+    l := []
+    foreach elemento in lista {
+        l := l ++ [elemento-1]
+    }
+    return(l)
+}
+
+function cantidadDe_En_(e, lista){
+    /*PROPÓSITO: Describe la cantidad de elementos iguales a e de la lista
+    dada.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETRO: e es un elemento del mismo tipo que los elementos de lista,
+    lista es una Lista de elementos de algun tipo.
+    RESULTADO: Un Número.
+    OBSERVACIÓN: Se realiza un recorrido de conteo sobre la lista.*/
+    c:=0
+    foreach elemento in lista{
+        if (elemento == e) {c := c + 1}
+    }
+    return(c)
+}
+
+function sinLosNPrimeros(lista, n){
+    /*PROPÓSITO: Describe la lista dada sin los n primeros elementos.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETROS: lista es una Lista de elementos, n es un Número.
+    RESULTADO: Una Lista de elementos del tipo de elementos de lista.*/
+    l := lista
+    repeat(n){
+        l := resto(l)
+    }
+    return(l)
+}
+
+//---------------------------------OTRO
+
+function direcciónANúmero(d){
+    /*PROPÓSITO: Describe un número entre 0 y 3 dependiendo de la dirección
+    dada. Si es Norte 0, Este 1, Sur 2 y Oeste 3.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETRO: d es una Dirección.
+    RESULTADO: Un Número.
+    OBSERVACIÓN: Se realiza un recorrido de busqueda y conteo sobre las 
+    direcciones.*/
+    c := 0
+    dirActual := minDir()
+    while(not(dirActual == maxDir()) && not(dirActual == d)){
+        c := c + 1
+        dirActual := siguiente(dirActual)
+    }
+    return(c)
+}
+//-------------------------------ALEATORIO
+
+//Las siguientes funciones fueron copiadas y modificadas de Zilfost
+
+function randomConMaximo(maximo,semilla)
+    /*PROPÓSITO: calcula en base a una semilla dada (x_i),
+    un número seudoaleatorio entre 0 y el máximo dado.
+    OBSERVACIONES:
+        * este código fue copiado del artículo "Functional
+        Programming with Overloading and Higher-Order
+        Polymorphism" de Mark Jones, publicado en "Advanced
+        Functional Programming", J.Jeuring y E.Meijer, editores,
+        LNCS 925, Springer Verlag, 1995.*/
+{
+    return(random(semilla) mod maximo)
+}
+
+function random(semilla)
+    /*PROPÓSITO: calcula un número seudoaleatorio según una semilla dada
+    OBSERVACIONES:
+        * auxiliar para randomEntre0YConSemilla(maximo, semilla)
+        * Mark Jones lo atribuye a "Random Number Generators: Good
+        Ones are Hard to Find" de S.K.Park y K.W.Miller, publicado
+        en la revista "Communications of the ACM", 31(10):1192-1201,
+        en octubre de 1988.
+        * este artículo en realidad lo toma de una propuesta de 1969
+        por Lewis, Goodman and Miller y lo propone como estándar
+        mínimo de generación de números seudoaleatorios
+        * el comentario sobre su funcionamiento fue agregado por mí(Pablote
+        autor de Zilfost, programa de donde se copio este procedimiento),
+        en base a alguna lectura que encontré alguna vez que lo
+        explicaba, y de la que no recuerdo la cita:
+        x_{i+1} = a*x_i mod m
+        donde
+        a = 7^5 = 16807
+        m = 2^31 - 1 = 2147483647
+        q = m div a = 127773
+        r = m mod a = 2836
+        y entonces
+        x_{i+1} = a*(x_i mod q) - r*(x_i div q) + delta*m
+        siendo
+        delta = 1 si (a*(x_i mod q) - r*(x_i div q) > 0)
+        delta = 0 si no*/
+{
+    hi := semilla div 12773 -- semilla div (2^31 mod 7^5)
+    lo := semilla mod 12773 -- semilla mod (2^31 mod 7^5)
+    preresultado := 16807 * lo - 2836 * hi
+    -- 7^5 * lo - (2^31 mod 7^5) * hi
+    if (preresultado > 0) { delta := 0 }
+    else { delta := 1 }
+    return (preresultado + delta * 2147483647)
+    -- delta * 2^31
+}

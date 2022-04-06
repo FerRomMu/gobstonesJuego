@@ -1,0 +1,2371 @@
+/*------------------------------------------------------*\
+||╔═════════════════════════════════════════════════════╗||
+||║=====================================================║||
+||║------------------CALABOZO INFINITO------------------║||
+||║=====================================================║||
+||╚═════════════════════════════════════════════════════╝||
+||                        Por ROMERO MUÑOZ FERNANDO MARIO||
+||                                                       ||
+||CALABOZO INFINITO:                                     ||
+||  Es un juego por turnos de estilo roguelike, donde    ||
+||  debes mover tu personaje interactuando con las fichas||
+||  del casillero al que te desplazas.                   ||
+||                                                       ||
+||  En este caso en especial interpretas a un guerrero que|
+||  ha quedado atrapado en un calabozo infinito. Intenta ||
+||  sobrevivir el mayor tiempo posible y junta la mayor  ||
+||  cantidad de puntos.                                  ||
+||                                                       ||
+||  Como objetivo extra hay 2 easter eggs programados para|
+||  los alumnos de la materia. Encontralos pero con      ||
+||  cuidado.                                             ||
+||                                                       ||
+||IMPORTANTE:                                            ||
+||  -Antes de iniciar una partida nueva debes apretar    ||
+||  varias veces las teclas 2 y 3 de manera aleatoria.   ||
+||  Esto generará que la partida siempre sea distinta a la|
+||  última jugada.                                       ||
+||  -Para que el juego funcione debe haber un tablero de ||
+||  al menos un tamaño de 7 columnas x 9 filas(no importa||
+||  si hay de mas)                                       ||
+||  -Si el juego empieza a andar lento usa la letra g para|
+||  perder poderes, esto evitará que falle.              ||
+||                                                       ||
+||REGLAS:                                                ||
+||  -Si llegas a 0 puntos de vida(número en la celda 6,4)|| 
+||  pierdes y el juego deja de reaccionar a tus comandos,|| 
+||  por lo que debes empezar una nueva partida (puedes   ||
+||  hacerlo con la tecla 1).                             ||
+||  -Existen 4 poderes que tus compañeros te darán:      ||
+||      -Desplazamiento(Picaro): Te moverá sin interactuar|
+||          al extremo de la dirección del poder.        ||
+||      -Golpe(Monje): Hace 2 puntos de daño en la       ||
+||          dirección del poder.                         ||
+||      -Transformar(Brujo): Convierte a un enemigo en   ||
+||          la dirección del poder en una rana.          ||
+||      -Hechizo(Mago): Hechizo que causará 1 a todos los||
+||          enemigos del tablero.                        ||
+||  -Siempre usaras el primer poder obtenido y al hacerlo||
+||  se gastará, permitiendote usar otro si tenias.       ||
+||  -Al moverte a un casillero interactuas con lo que haya|
+||  en él. Si es un monstruo te hará daño y te dará puntos|
+||  Si es un objeto te puede curar o afectarte de alguna ||
+||  manera, etc. Interactua y descubre que hace cada cosa.|
+||  -Al moverte el tablero se rellenara automaticamente  ||
+||  con nuevas fichas.                                   ||
+||  -Puedes mirar tu puntación en la celda fila 6 columna 2
+||  -Puedes mirar tu proxima habilidad en la celda a la  ||
+||  derecha de tu puntuación.                            ||
+||  -Puedes ver tu vida a la celda a la derecha de tu prox|
+||  habilidad.                                           ||
+||  -Puedes ver que ha sucedido en la celda superior     ||
+||  derecha.                                             ||
+||  -Puedes ver que estados te afectan en la celda superior
+||  a proxima habilidad.                                 ||
+||                                                       ||
+||CREDITOS IMAGEN:                                       ||
+||  Se utilizaron imagenes con cc. A continucación enlisto|
+||  los diferentes creadores de los sprites del juego.   ||
+||  -Personaje: Warren Clark                             ||
+||          https://lionheart963.itch.io/                ||
+||  -Enemigos (ojo, esqueleto, goblin, hongo): luizMelo  ||
+||          https://luizmelo.itch.io/                    ||
+||  -Mago: LuizMelo                                      ||        
+||  -Brujo: Jose Moyano                                  ||
+||          https://jose-moyano.itch.io/                 ||
+||  -Pícaro: Rvros                                       ||
+||          https://rvros.itch.io/                       ||
+||  -Monje y enemigo espiritú: Ansimuz                   ||
+||          https://ansimuz.itch.io/                     ||
+||  -Iconos varios (Habilidades, items, etc):            ||
+||          https://thewristbandit.itch.io/              ||
+||  -Bordes Szadi art.                                   ||
+\*------------------------------------------------------*/
+//*------------------------------------------------------*
+//╔══════════════════════════════════════════════════════╗
+//║======================================================║
+//║-----------------------COMANDOS-----------------------║
+//║======================================================║
+//╚══════════════════════════════════════════════════════╝
+/*------------------------------------------------------*\
+    Tecla 1     PARTIDA NUEVA
+    Tecla 2     CAMBIAR SEMILLA
+    Tecla 3     CAMBIAR SEMILLA
+    
+    MOVIMIENTO:
+    W           MOVER ARRIBA
+    A           MOVER IZQUIERDA
+    S           MOVER ABAJO
+    D           MOVER DERECHA
+    
+    Arriba      MOVER ARRIBA
+    Izquierda   MOVER IZQUIERDA
+    Abajo       MOVER ABAJO
+    Derecha     MOVER DERECHA
+    
+    ESPECIAL:
+    I           TIRAR PODER ARRIBA
+    L           TIRAR PODER A LA DERECHA
+    J           TIRAR PODER A LA IZQUIERDA
+    K           TIRAR PODER HACIA ABAJO
+    (Nota que i,j,k,l forman flechas como w,a,s,d)
+    G           QUITA PRIMER PODER
+\*------------------------------------------------------*/
+
+//------¡¡¡¡DE AQUÍ EN ADELANTE ES CÓDIGO DEL PROGRAMA!!!!
+//*------------------------------------------------------*
+//╔══════════════════════════════════════════════════════╗
+//║======================================================║
+//║-----------------------PROGRAMA-----------------------║
+//║======================================================║
+//╚══════════════════════════════════════════════════════╝
+//*------------------------------------------------------*
+//ACLARACIÓN SOBRE CONTRATOS:
+//  Se usará la precondición "<default>" para indicar de
+//manera resumida que "se requiere un tablero de Calabozos
+//Infinitos correctamente representado."
+//*------------------------------------------------------*
+
+interactive program {
+    K_1 -> {NuevaPartida()}             //PARTIDA NUEVA
+    K_2 -> {AumentarSemilla()}
+    K_3 -> {AumentarSemillaMas()}
+    
+    //MOVIMIENTO:
+    K_W -> {MoverPersonaje(Norte)}      //MOVER ARRIBA
+    K_A -> {MoverPersonaje(Oeste)}      //MOVER IZQUIERDA
+    K_S -> {MoverPersonaje(Sur)}        //MOVER ABAJO
+    K_D -> {MoverPersonaje(Este)}       //MOVER DERECHA
+    
+    K_UP -> {MoverPersonaje(Norte)}     //MOVER ARRIBA
+    K_LEFT -> {MoverPersonaje(Oeste)}   //MOVER IZQUIERDA
+    K_DOWN -> {MoverPersonaje(Sur)}     //MOVER ABAJO
+    K_RIGHT -> {MoverPersonaje(Este)}   //MOVER DERECHA
+    
+    //ESPECIAL:
+    K_G -> {QuitarHabilidad()}          //QUITA PRIMER Habilidad
+    K_I -> {UsarHabilidad(Norte)}       //TIRAR Habilidad ARRIBA
+    K_L -> {UsarHabilidad(Este)}        //TIRAR Habilidad A LA DERECHA
+    K_J -> {UsarHabilidad(Oeste)}       //TIRAR Habilidad A LA IZQUIERDA
+    K_K -> {UsarHabilidad(Sur)}         //TIRAR Habilidad HACIA ABAJO
+}
+
+//*------------------------------------------------------*
+//╔══════════════════════════════════════════════════════╗
+//║======================================================║
+//║--------------------REPRESENTACIÓN--------------------║
+//║======================================================║
+//╚══════════════════════════════════════════════════════╝
+//*------------------------------------------------------*
+//SE USARA UN TABLERO DE AL MENOS 7x9
+//
+//TIPO DE CASILLERO O CELDA:
+//  Se representa con bolitas negras.
+//
+//DAÑO/CURA/VIDA:
+//  Se representa con bolitas rojas.
+//
+//EFECTO:
+//  Se representa con bolitas azules.
+//
+//AUXILIAR:
+//  Se representa con bolitas verde.
+//
+//ESTÉTICO:
+//  Se representa con combinaciones de bolitas azules y verdes.
+//
+//CASILLEROS: <Espacio por donde el personaje se puede mover>
+//  Un casillero se representa con hasta 7 bolitas negras.
+//
+//CELDAS DE DATOS(tambien referida como fila de datos): 
+//  Se compone de las siguientes 3.
+//
+//  CELDA DE HABILIDADES(CH): <Celda donde figura la proxima habilidad del
+//                           personaje>
+//      Se corresponde a la celda ubicada entre las celda de VidaYArmadura y
+//      Puntaje. Se abreviará como CH.
+//      *Se representa con 8 bolitas negras.
+//      REPRESENTACIONES ESPECIALES:
+//          *Se guardará en las bolitas Rojas de esta celda la lista de 
+//          habilidades (mirar codificación de listas)
+//          *Se guardará en las bolitas Verdes de esta celda la cantidad
+//          de elementos de la lista antes nombrada.
+//          *Se guardará en las bolitas Azules el código de imagen de la
+//          primer habilidad del personaje(para vestimenta).
+//
+//  PUNTAJE: <Celda que representa el puntaje actual>
+//      Se corresponde a la celda de la columna de mas al oeste y de la fila
+//      al norte de las filas de casilleros.
+//      *Se representa con 9 bolitas negras
+//      REPRESENTACIONES ESPECIALES:
+//          *En ella tambien se guardará el valor actual de la semilla con
+//          bolitas color Rojo.
+//          *Se guardará el valor del puntaje con bolitas Azules.
+//
+//  CELDA DE VIDAYARMADURA(CVYA): <Espacio donde figura la vida total y actual 
+//                          y la armadura del personaje>
+//      Se corresponde a la celda ubicada al este de puntaje. Se abreviará como 
+//      CVYA.
+//      *Se representa con 10 bolitas negras o mas.
+//      REPRESENTACIONES ESPECIALES:
+//          *Mirar datos del personaje
+//
+//TÍTULO:
+//  Se compone de dos partes.
+//  LOGO: <Espacio estetico donde va el logo del juego.>
+//      Se corresponde a la celdas de mas al oeste de la fila
+//      de título(una fila arriba de la de datos).
+//      *Se representa con 0 bolitas negras.
+//  VISUALIZADOR DE ESTADOS: <Espacio donde el jugador verá los estados>
+//      Se corresponde a la celda al este del LOGO.
+//      *Se representa con 0 bolitas negras.
+//      *Las bolitas azules representan la imagen de los estados actuales.
+//  MENSAJE: <Celda donde pueden haber msjs.>
+//      Se corresponde a la celda al este del visualizador de estados.
+//      *Se representa con 0 bolitas negras.
+//      *Las bolitas rojas representan la imagen de los msjs.
+//
+//PERSONAJE: <Personaje que maneja el jugador.>
+//  Se representa con 1 bolita negra.
+//  Se guardará con bolitas Rojas la lista de estados alterados y con
+//  bolitas Azules la Lista de conteo de turnos de esos estados. La cantidad
+//  de elementos de ambas listas(que es igual) se obtendrá en base al 
+//  número de representación de bolitas azules (se impedira la asignación
+//  de 0 como primer elemento de la lista a transformar en número).
+//  Con bolitas Verdes la representación grafica del personaje.
+//  El personaje SIEMPRE será el casillero actual al finalizar
+//  los procedimientos disparados por teclas. 
+//  
+//DATOS DEL PERSONAJE (REPRESENTADOS EN CVYD):
+//  Vida: <Puntos de vida del personaje; si llega a 0, pierde.>
+//      Se representa con bolitas rojas en CVYD.
+//  Armadura: <Puntos de armadura del personaje; si el personaje recibe daño y
+//      tiene armadura, se descuentan estos puntos en vez de la vida>
+//      Se representa con bolitas azules en CVYD.
+//  MaxVida: <Limite de puntos de vidad>
+//      Se representa con bolitas verdes en CVYD.
+//  MaxArmadura <Limite de puntos de armadura>
+//      Se representa con bolitas negras (+10 por representación de CVYD) en CVYD.
+//
+//ENEMIGOS:
+//  Se representa con 2 bolitas negras.
+//  Su daño se representa con bolitas rojas.
+//  Su efecto(si tiene) se representa con bolitas azules.
+//
+//OBJETO:
+//  Se representa con 3 bolitas negras.
+//  Su daño o cura se representa con bolitas rojas.
+//  Si cura tiene bolitas verdes.
+//  Su efecto se representa con bolitas azules.
+//
+//COFRE:
+//  Se representa con 4 bolitas negras.
+//
+//HABILIDAD:
+//  Se representa con 5 bolitas negras.
+//  Su habilidad se representa con bolitas azules.
+//
+//TRAMPA:
+//  Se representa con 6 bolitas negras.
+//  Su daño se representa con bolitas rojas.
+//  Su efecto se representa con bolitas azules.
+//
+//FICHA VACÍA:
+//  Se representa con 7 bolitas negras.
+//
+//OTRO:
+//  Para fines esteticos y agregados se utilizará combinaciones
+//  de bolitas verdes y azules.
+//
+//ALGORITMO LISTAS:
+//
+//  Por las limitaciones que me encontré en Gobstones opte por representar
+//  las Listas de tipos enumerativos a traves de un algoritmo para poder 
+//  representarlas de la forma mas eficiente que pude pensar con solo 2 colores 
+//  de bolitas (en el caso de los estados se hace una excepción para la 
+//  representación de la cantidad de elementos en base a la lista de turnos).
+//
+//  Al ser el tipo enumerativo un tipo con una cantidad de valores posibles
+//  fija, a la hora de representar una lista que tiene una cierta cantidad de
+//  elementos de ese tipo lo que se hará es lo siguiente:
+//  -A cada valor posible que puede tener un elemento se le asignará un
+//  orden que se reflejará como un número a partir de 0 (usando siguiente
+//  de ese tipo y min y max de ese tipo).
+//  -Se compondrá un número donde cada dígito se corresponda con la posición
+//  de la lista y su valor con el valor de orden.
+//  x ej si tenemos la lista: [Golpe, Golpe, Hechizo]
+//  donde el orden de Golpe es 1 y el de Hechizo es 3(buscar en
+//  modelación de datos). El número compuesto será: 113. Se considerará este
+//  número en base igual a la cantidad de posibles valores de un elemento
+//  (en este caso base 4 por existir 4 habilidades) y se lo pasará a decimal.
+//  En este ejemplo: 1*4^2 + 1*4^1 + 3*4^0 = 16 + 4 + 3 = 23
+//  -Este número final obtenido (23) será el representado por bolitas en la
+//  celda que guarde la lista (notese que guarda en ella tanto el orden como
+//  los elementos si se aplica el sistema inverso). 
+//  -Por un problema que surge de esta forma de representación
+//  se utilizará ademas otro color de bolitas para guardar la cantidad de
+//  elementos de la lista (de esta forma si los primeros elementos de la lista
+//  son de orden 0 no se perderán durante la conversión a decimal)
+//
+//*------------------------------------------------------*
+//╔══════════════════════════════════════════════════════╗
+//║1.1.Modelación de datos-------------------------------║
+//╚══════════════════════════════════════════════════════╝
+//*------------------------------------------------------*
+//TIPOS DE DATOS:
+//  -TipoDeFicha /Variante/ (Posibles tipos de ficha)
+//      -minTipo <- funciones para ese tipo
+//      -maxTipo
+//      -sigTipo
+//  -Ficha       /Registro/ (Datos de las fichas)
+//  -Personaje   /Registro/ (Datos del personaje)
+//  -EstadosActuales /Registro/ (Los estados que afectan al personaje se
+//                          componen de una Lista de Turnos y otra de Estados)
+//  -Estado      /Variante/ (Todos los estados que puede adoptar el personaje)
+//      -minEstado <- funciones para ese tipo
+//      -maxEstado
+//      -sigEstado
+//      -cantEstados
+//  -Habilidad   /Variante/ (Todas las habilidades)
+//      -minHabilidad <- funciones para este tipo
+//      -maxHabilidad
+//      -sigHabilidad
+//      -cantHab
+//*------------------------------------------------------* 
+type TipoDeFicha is variant {
+    /*PROPÓSITO: Modelar las posibles fichas que puede haber en un casillero.*/
+    case Enemigo {}
+    case Objeto {}
+    case Cofre {}
+    case Habilidad {}
+    case Trampa {}
+    case FichaVacia {}
+}
+
+function minTipo(){
+    /*PROPÓSITO: Describe el primer TipoDeFicha en orden.
+    PRECONDICIÓN: Ninguna.
+    RESULTADO: Un TipoDeFicha*/
+    return(Enemigo)
+}
+
+function maxTipo(){
+    /*PROPÓSITO: Describe el último TipoDeFicha en orden.
+    PRECONDICIÓN: Ninguna.
+    RESULTADO: Un TipoDeFicha*/
+    return(FichaVacia)
+}
+
+function sigTipo(tipo){
+    /*PROPÓSITO: Describe el siguiente TipoDeFicha al dado en orden.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETRO: tipo es un TipoDeFicha.
+    RESULTADO: Un TipoDeFicha.*/
+    return(choose
+        Objeto when (tipo == Enemigo)
+        Cofre when (tipo == Objeto)
+        Habilidad when (tipo == Cofre)
+        Trampa when (tipo == Habilidad)
+        FichaVacia when (tipo == Trampa)
+        Enemigo otherwise
+    )
+}
+//--------------------------------------------------------
+type Ficha is record {
+    /*PROPÓSITO: Modelar los datos de las fichas de un casillero.
+    Inv. Rep: El daño y el efecto deben ser Números positivos o 0.*/
+    field tipo              //Un TipoDeFicha
+    field daño              //Un Número
+    field efecto            //Un Número
+    field aux               //Booleano (activa o no algo)
+}
+//--------------------------------------------------------
+type Personaje is record {
+    /*PROPÓSITO: Modelar los datos que conforman al personaje.
+    INV. REP: 
+        *vida debe ser menor o igual a maxVida.
+        *armadura debe ser menor o igual a maxArmadura.*/
+    field vida              //Un Número
+    field maxVida           //Un Número
+    field armadura          //Un Número
+    field maxArmadura       //Un Número
+    field listaHabilidades  //Lista de Habilidades 
+    field estadosActivos    //Un Registro de EstadosActuales
+}
+//--------------------------------------------------------
+type EstadosActuales is record {
+    /*PROPÓSITO: Modelar los estados actuales que tiene el personaje y
+    sus duraciones.
+    INV. REP: listaEstados debe tener la misma cantidad de elementos que
+    listaTurnos.*/
+    field listaEstados      //Lista de Estados
+    field listaTurnos       //Lista de Números
+}
+//--------------------------------------------------------
+type Estado is variant {
+    /*PROPÓSITO: Modelar los estados que puede tener el personaje.*/
+    case Envenenado {}  //recibe 1 de daño por turno  
+    case Regeneración {}//se cura 1 de daño por turno 
+    case Debilitado {}  //Recibe 2 de daño extra      
+    case Fortalecido {} //Recibe 2 de daño menos      
+}
+
+function minEstado (){
+    /*PROPÓSITO: Describe el primer Estado en orden.
+    PRECONDICIÓN: Ninguna.
+    RESULTADO: Un Estado*/
+    return(Envenenado)
+}
+
+function maxEstado (){
+    /*PROPÓSITO: Describe el último Estado en orden.
+    PRECONDICIÓN: Ninguna.
+    RESULTADO: Un Estado*/
+    return(Fortalecido)
+}
+
+function sigEstado (estado){
+    /*PROPÓSITO: Describe el siguiente Estado al dado en orden.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETRO: estado es un Estado.
+    RESULTADO: Un Estado.*/
+    return(choose Regeneración when (estado == Envenenado)
+                  Debilitado when (estado == Regeneración)
+                  Fortalecido when (estado == Debilitado)
+                  Envenenado otherwise)
+}
+
+function cantEstados() {
+    /*PROPÓSITO: Describe la cantidad de Estados existentes.
+    PRECONDICIÓN: Ninguna.
+    OBSERVACIÓN: No se calcula por proceso, por lo que de haber
+    modificación de los estados se debe modificar el valor
+    que retorna.*/
+    return(4)
+}
+//--------------------------------------------------------
+type Habilidad is variant {
+    /*PROPÓSITO: Modelar las habilidades que puede tener el personaje.*/
+    case Desplazamiento {}
+    case Golpe {}
+    case Transformar {}
+    case Hechizo {}
+}
+
+function minHabilidad (){
+    /*PROPÓSITO: Describe la primer Habilidad en orden.
+    PRECONDICIÓN: Ninguna.
+    RESULTADO: Una Habilidad*/
+    return(Desplazamiento)
+}
+
+function maxHabilidad (){
+    /*PROPÓSITO: Describe la última Habilidad en orden.
+    PRECONDICIÓN: Ninguna.
+    RESULTADO: Una Habilidad*/
+    return(Hechizo)
+}
+
+function sigHabilidad (hab){
+    /*PROPÓSITO: Describe la siguiente Habilidad a la dada.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETRO: hab es una Habilidad.
+    RESULTADO: Una Habilidad.*/
+    return(choose Golpe when (hab == Desplazamiento)
+                  Transformar when (hab == Golpe)
+                  Hechizo when (hab == Transformar)
+                  Desplazamiento otherwise)
+}
+
+function cantHab(){
+    /*PROPÓSITO: Describe la cantidad de Habilidades existentes.
+    PRECONDICIÓN: Ninguna.
+    OBSERVACIÓN: No se calcula por proceso, por lo que de haber
+    modificación de las habilidades se debe modificar el valor
+    que retorna.*/
+    return(4)
+}
+//*------------------------------------------------------*
+//╔══════════════════════════════════════════════════════╗
+//║1.2.Funciones de abstracción--------------------------║
+//╚══════════════════════════════════════════════════════╝
+//*------------------------------------------------------*
+//╔══════════════════════════════════════════════════════╗
+//║1.2.1. De lugares-------------------------------------║
+//╚══════════════════════════════════════════════════════╝
+//*------------------------------------------------------*
+//-esFilaDeDatos
+//  -esCVYA
+//  -esPuntaje
+//  -esCH
+//-esCasillero
+//  -esCasilleroAl_
+//-esTítulo
+//-esPersonaje
+//-esTecho
+//*------------------------------------------------------* 
+function esFilaDeDatos() {
+    /*PROPÓSITO: Indica si la celda actual es parte de la fila de datos.
+    PRECONDICIÓN: <default>
+    RESULTADO: Un Booleano.*/
+    return(esCVYA() || esPuntaje() || esCH())
+}
+
+function esCVYA() {
+    /*PROPÓSITO: Indica si la celda actual es CVYA.
+    PRECONDICIÓN: <default>
+    RESULTADO: Un Booleano.*/
+    return(nroBolitas(Negro)>=10)
+}
+
+function esCH() {
+    /*PROPÓSITO: Indica si la celda actual es CH.
+    PRECONDICIÓN: <default>
+    RESULTADO: Un Booleano.*/
+    return(nroBolitas(Negro)==9)
+}
+
+function esPuntaje() {
+    /*PROPÓSITO: Indica si la celda actual es de puntaje.
+    PRECONDICIÓN: <default>.
+    RESULTADO: Un Booleano.*/
+    return(nroBolitas(Negro)==8)
+}
+//--------------------------------------------------------
+function esTítulo(){
+    /*PROPÓSITO: Indica si la celda actual es de título.
+    PRECONDICIÓN: <default>
+    RESULTADO: Un Booleano.*/
+    if(puedeMover(Sur)) {Mover(Sur)}
+    return(puedeMover(Sur) && esFilaDeDatos())
+    //       ^Si no puede mover sur es porque estaba en la fila 0 o 1
+}
+//--------------------------------------------------------
+function esCasillero() {
+    /*PROPÓSITO: Indica si la celda actual es un casillero.
+    PRECONDICIÓN: <default>
+    RESULTADO: Un Booleano.*/
+    return(hayBolitas(Negro) && nroBolitas(Negro)<=7)
+}
+
+function esCasilleroAl_(dir){
+    /*PROPÓSITO: Indica si la celda adyacente en la dirección dada
+    es un casillero.
+    PRECONDICIÓN: 
+        *<default>
+        *Hay una celda adyacente en la dirección dada.
+    PARÁMETRO: dir es una Dirección.
+    RESULTADO: Un Booleano.*/
+    Mover(dir)
+    return(esCasillero())
+}
+
+//--------------------------------------------------------
+function esPersonaje(){
+    /*PROPÓSITO: Indica si la celda actual es donde está el personaje.
+    PRECONDICIÓN: <default>
+    RESULTADO: Un Booleano.*/
+    return(nroBolitas(Negro) == 1)
+}
+//*------------------------------------------------------*
+function esTecho(){
+    /*PROPÓSITO: Indica si la celda actual es una celda estética de un techo.
+    PRECONDICIÓN: <default>
+    RESULTADO: Un Booleano.*/
+    return(nroBolitas(Verde) == 4 && nroBolitas(Azul) == 1)
+}
+//╔══════════════════════════════════════════════════════╗
+//║1.2.2. De lectura de datos----------------------------║
+//╚══════════════════════════════════════════════════════╝
+//*------------------------------------------------------*
+//-leerFicha
+//  -tipoDeFicha
+//  -leerFichaAl_(dir)
+//
+//-leerPersonaje
+//  -leerVidaActual
+//  -leerMaxVidaActual
+//  -leerArmaduraActual
+//  -leerMaxArmaduraActual
+//  -leerListaHabilidadActual
+//      -lNúmeroALHabilidad (lista número a lista habilidad)
+//          -habilidadSegúnNúmero_
+//  -leerEstadosActual (lista número a lista estado)
+//      -lNúmeroALEstados
+//          -estadoSegúnNúmero_
+//  -leerTurnosActual
+//
+//-leerPuntaje
+//*------------------------------------------------------*
+
+function leerFicha() {
+    /*PROPÓSITO: Describe la ficha del casillero actual.
+    PRECONDICIÓN: <default>
+        *Hay una ficha en el casillero actual.
+    RESULTADO: Una Ficha.*/
+    
+    return(Ficha(tipo <- tipoDeFicha(), 
+                daño <- nroBolitas(Rojo), 
+                efecto <- nroBolitas(Azul), 
+                aux <- hayBolitas(Verde))
+    )
+}
+
+function leerFichaAl_(dir){
+    /*PROPÓSITO: Describe la ficha del casillero aledaño en la dirección
+    dada.
+    PRECONDICIÓN: <default>
+        *Debe haber un casillero con ficha en la dirección dada.
+    RESULTADO: Una Ficha.*/
+    Mover(dir)
+    return(leerFicha())
+}
+
+function tipoDeFicha(){
+    /*PROPÓSITO: Describe el TipoDeFicha del casillero actual.
+    PRECONDICIÓN: <default>
+        *El cabezal esta en un casillero.
+        *El casillero actual no es el de personaje.
+    RESULTADO: Un TipoDeFicha.
+    OBSERVACIÓN: De no cumplirse la precondición devolvera FichaVacia
+    aunque no lo sea.*/
+    return(choose   Enemigo when (nroBolitas(Negro) == 2)
+                    Objeto when (nroBolitas(Negro) == 3)
+                    Cofre when (nroBolitas(Negro) == 4)
+                    Habilidad when (nroBolitas(Negro) == 5)
+                    Trampa when (nroBolitas(Negro) == 6)
+                    FichaVacia otherwise)
+}
+//--------------------------------------------------------
+function leerPersonaje() {
+    /*PROPÓSITO: Describe el personaje.
+    PRECONDICIÓN: <default> 
+        *Hay un personaje en el casillero actual.
+    RESULTADO: Un Personaje*/
+    return(
+        Personaje(  
+            vida <- leerVidaActual(),
+            maxVida <- leerMaxVidaActual(),
+            armadura <- leerArmaduraActual(),
+            maxArmadura <- leerMaxArmaduraActual(),
+            listaHabilidades <- leerListaHabilidadActual(),
+            estadosActivos <- leerEstadosActivos()
+        )
+    )
+}
+//--------------------------------------------------------
+function leerVidaActual(){
+    /*PROPÓSITO: Describe la vida actual del personaje.
+    PRECONDICIÓN: <default>
+    RESULTADO: Un Número.*/
+    IrACVYA()
+    return(nroBolitas(Rojo))
+}
+function leerMaxVidaActual(){
+    /*PROPÓSITO: Describe el valor maximo de vida del personaje.
+    PRECONDICIÓN: <default>
+    RESULTADO: Un Número.*/
+    IrACVYA()
+    return(nroBolitas(Verde))
+}
+function leerArmaduraActual(){
+    /*PROPÓSITO: Describe la vida actual del personaje.
+    PRECONDICIÓN: <default>
+    RESULTADO: Un Número.*/
+    IrACVYA()
+    return(nroBolitas(Azul))
+}
+function leerMaxArmaduraActual(){
+    /*PROPÓSITO: Describe el valor maximo de vida del personaje.
+    PRECONDICIÓN: <default>
+    RESULTADO: Un Número.*/
+    IrACVYA()
+    return(nroBolitas(Negro)-10)
+}
+//--------------------------------------------------------
+function leerListaHabilidadActual(){
+    /*PROPÓSITO: Describe la lista de habilidades que tiene el personaje.
+    PRECONDICIÓN: <default>
+    RESULTADO: Una Lista de Habilidades.*/
+    IrACH()
+    return(lNúmeroALHabilidad(númeroALista(nroBolitas(Rojo),nroBolitas(Verde),cantHab())))
+}
+
+function lNúmeroALHabilidad(lista){
+    /*PROPÓSITO: Describe una lista de Habilidades en base a una Lista de Números
+    dados donde cada número representa una habilidad.
+    PRECONDICIÓN: La Lista de Números debe respetar el algoritmo de listas
+    explicado en representación.
+    PARÁMETRO: lista es una Lista de Número de los cuales, cada uno enumera
+    una habilidad.
+    RESULTADO: Una Lista de Habilidades.*/
+    l:=[]
+    foreach elemento in lista{
+        l := l ++ [habilidadSegúnNúmero_(elemento)]
+    }
+    return(l)
+}
+
+function habilidadSegúnNúmero_(n){
+    /*PROPÓSITO: Describe la habilidad que se corresponde al número dado en
+    el orden de las habilidades.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETRO: n es un Número que debe corresponderse a un orden de una
+    habilidad.
+    RESULTADO: Una Habilidad.*/
+    hab := minHabilidad()
+    repeat(n){ //si es 0 es minHabilidad()
+        hab := sigHabilidad(hab)
+    }
+    return(hab)
+}
+//--------------------------------------------------------
+function leerEstadosActivos(){
+    /*PROPÓSITO: Describe los EstadosActuales del personaje.
+    PRECONDICIÓN: <default>
+    RESULTADO: Un EstadoActual.*/
+    return(
+        EstadosActuales(
+            listaEstados <- leerEstadosActual(longitudDe_
+                                (númeroConLongitudIncluidaALista(nroBolitas(Azul),4))),
+            listaTurnos <- leerTurnosActual()
+            )
+    )
+}
+
+function leerEstadosActual(longitud) {
+    /*PROPÓSITO: Describe la Lista de Estados activos actuales.
+    PRECONDICIÓN: <default> y el personaje se encuentra en el casillero actual.
+    PARÁMETROS: longitud es el número de elementos de la lista a leer.
+    RESULTADO: Una Lista de Estados.*/
+    return(lNúmeroALEstados(númeroALista(nroBolitas(Rojo),longitud,cantEstados())))
+}
+
+function lNúmeroALEstados(lista){
+    /*PROPÓSITO: Describe una Lista de Estados en base a una Lista de Números
+    dados donde cada número representa un estado.
+    PRECONDICIÓN: La Lista de Números debe respetar el algoritmo de listas
+    explicado en representación.
+    PARÁMETRO: lista es una Lista de Números de los cuales, cada uno enumera
+    un Estado.
+    RESULTADO: Una Lista de Estados.
+    OBSERVACIÓN: Se realiza un recorrido de transformación sobre la lista dada.*/
+    l := []
+    foreach elemento in lista {
+        l := l ++ [estadoSegúnNúmero_(elemento)]
+    }
+    return(l)
+}
+
+function estadoSegúnNúmero_(n){
+    /*PROPÓSITO: Describe un estado que se corresponde al número dado en el orden
+    de los estados.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETRO: n es un Número que debe corresponderse a un orden de un estado.
+    RESULTADO: Un Estado.*/
+    estado := minEstado()
+    repeat(n){
+        estado := sigEstado(estado)
+    }
+    return(estado)
+}
+//--------------------------------------------------------
+function leerTurnosActual() {
+    /*PROPÓSITO: Describe la Lista de turnos de los Estados activos actuales.
+    PRECONDICIÓN: <default> y el personaje se encuentra en el casillero actual.
+    RESULTADO: Una Lista de Números.*/
+    return(númeroConLongitudIncluidaALista(nroBolitas(Azul),4))
+}               //Aunque el maximo de turnos es 3, se usa 4 para consierar
+                //el 0 (que no debe ser usado para no generar errores).
+                //esto es que va de 0 a 3, por mas que no se use el 0.
+//--------------------------------------------------------
+function leerPuntaje() {
+    /*PROPÓSITO: Describe la cantidad de puntos que tiene el jugador.
+    PRECONDICIÓN: <default>
+    RESULTADO: Un Número.*/
+    IrAPuntaje()
+    return(nroBolitas(Azul))
+}
+
+//*------------------------------------------------------*
+//╔══════════════════════════════════════════════════════╗
+//║1.3. Recorrido de tablero-----------------------------║
+//╚══════════════════════════════════════════════════════╝
+//*------------------------------------------------------*
+//  PasarAlSiguienteCasillero
+//  esFilaSuperiorDeCasillero
+//  esÚltimoCasillero
+//*------------------------------------------------------*
+procedure PasarAlSiguienteCasillero(){
+    /*PROPÓSITO: Mover el cabezal al siguiente casillero en un recorrido
+    de casilleros noreste.
+    PRECONDICIÓN: <default>*/
+    if (not(esFilaSuperiorDeCasilleros())) 
+        then{Mover(Norte)}
+        else{Mover(Este)
+            IrAlBorde(Sur)
+            Mover(Norte)
+        }    
+}
+//*------------------------------------------------------*
+function esFilaSuperiorDeCasilleros(){
+    /*PROPÓSITO: Indica si es la fila mas al norte de casilleros.
+    PRECONDICIÓN: <default>
+    RESULTADO: Un Booleano.*/
+    Mover(Norte)
+    return(esTecho())
+}
+//*------------------------------------------------------*
+function esÚltimoCasillero(){
+    /*PROPÓSITO: Indica si la celda actual es el último casillero.
+    PRECONDICIÓN: <default>
+    RESULTADO: Un Booleano.*/
+    Mover(Norte)
+    Mover(Norte)
+    Mover(Oeste)
+    return(esCVYA())
+}
+//*------------------------------------------------------*
+//╔══════════════════════════════════════════════════════╗
+//║1.4. Sobre la semilla---------------------------------║
+//╚══════════════════════════════════════════════════════╝
+//*------------------------------------------------------*
+//  ActualizarSemilla
+//  AumentarSemilla
+//  AumentarSemillaMas
+//  nsDe3Cifras
+//  semillaActual
+//*------------------------------------------------------*
+procedure ActualizarSemilla(){
+    /*PROPÓSITO: Crea una nueva semilla y la guarda en Puntaje.
+    PRECONDICIÓN: <default>*/
+    co := coordenadaActual()
+    IrAPuntaje()
+    Poner__Veces(Rojo, nsDe3Cifras(random(semillaActual())))
+    IrACoordenada(co)
+}
+
+procedure AumentarSemilla(){
+    /*PROPÓSITO: Crea una nueva semilla y la aumenta en 1.
+    PRECONDICIÓN: <default>*/
+    co := Coordenada(fila <- filaActual(), columna <- columnaActual())
+    IrAPuntaje()
+    Poner(Rojo)
+    ActualizarSemilla()
+    IrACoordenada(co)
+}
+
+procedure AumentarSemillaMas(){
+    /*PROPÓSITO: Aumenta la semilla en 4561.
+    PRECONDICIÓN: <default>*/
+    co := Coordenada(fila <- filaActual(), columna <- columnaActual())
+    IrAPuntaje()
+    Poner__Veces(Rojo, 4561)
+    IrACoordenada(co)
+}
+
+function nsDe3Cifras(ns){
+    /*PROPÓSITO: Devuelve un valor de nueva semilla menor a 100.
+    PRECONDICIÓN: Ninguna.
+    RESULTADO: Un Número menor a 100.
+    OBSERVACIÓN: La única razón para hacer esto, es que poner muchas
+    bolitas a la vez en Gobstones genera que se tilde. De todos modos
+    la nueva semilla no valdrá necesariamente menos de 100 ya que
+    se van acumulando las bolitas de anteriores semillas.*/
+    ac := ns
+    while(ac >= 100){
+        ac := ac div 10
+    }
+    return(ac)
+}
+
+function semillaActual(){
+    /*PROPÓSITO: Describe el valor de la semilla actual.
+    PRECONDICIÓN: <default>
+    RESULTADO: Un Número.*/
+    IrAPuntaje()
+    return(nroBolitas(Rojo))
+}
+
+//╔══════════════════════════════════════════════════════╗
+//║======================================================║
+//║--------------OPERACIONES SOBRE TABLERO---------------║
+//║======================================================║
+//╚══════════════════════════════════════════════════════╝
+//*------------------------------------------------------*
+//╔══════════════════════════════════════════════════════╗
+//║2.1.Posicionar en el tablero--------------------------║
+//╚══════════════════════════════════════════════════════╝
+//*------------------------------------------------------*
+//-IrATítulo
+//  -IrAMsj
+//  -IrAVisualDeEstados
+//-IrAPuntaje
+//-IrACVYA
+//-IrACH
+//-IrAPrimerCasillero <- el mas al oeste y al sur, siempre sera la celda 1,1
+//*------------------------------------------------------*
+procedure IrATítulo() {
+    /*PROPÓSITO: Desplaza el cabezal a la celda mas al oeste de las 
+    que componen el título.
+    PRECONDICIÓN: <default>*/
+    IrAPrimerCasillero()
+    Mover__Veces(Norte, 6)
+    Mover(Este)
+}
+
+procedure IrAMsj(){
+    /*PROPÓSITO: Desplaza el cabezal a la celda de mensaje.
+    PRECONDICIÓN: <default>*/
+    IrATítulo()
+    Mover__Veces(Este,2)
+}
+
+procedure IrAVisualDeEstados() {
+    /*PROPÓSITO: Desplaza el cabezal a la celda donde se visualizan
+    los estados del personaje.
+    PRECONDICIÓN: <default>*/
+    IrATítulo()
+    Mover(Este)
+}
+
+procedure IrAPuntaje() {
+    /*PROPÓSITO: Desplaza el cabezal al puntaje.
+    PRECONDICIÓN: <default>*/
+    IrATítulo()
+    Mover(Sur)
+}
+
+procedure IrAEsquinaSurOeste(){
+    /*PROPÓSITO: Desplaza el cabezal a la celda 0,0.
+    PRECONDICIÓN: ninguna.*/
+    IrAlBorde(Sur)
+    IrAlBorde(Oeste)
+}
+
+procedure IrAPrimerCasillero(){
+    /*PROPÓSITO: Desplaza el cabezal al primer casillero (celda 1,1)
+    PRECONDICIÓN: <default>*/
+    IrAEsquinaSurOeste()
+    Mover(Norte)
+    Mover(Este)
+}
+
+procedure IrACVYA() {
+    /*PROPÓSITO: Desplaza el cabezal a CVYA.
+    PRECONDICIÓN: <default>*/
+    IrAPuntaje()
+    Mover__Veces(Este, 2)
+}
+
+procedure IrACH(){
+    /*PROPÓSITO: Desplaza el cabezal a CH.
+    PRECONDICIÓN: <default>*/
+    IrAPuntaje()
+    Mover(Este)
+}
+
+procedure IrAlBordeDelTablero(dir){
+    /*PROPÓSITO: Desplaza el cabezal al borde del tablero en la dirección
+    dada.
+    PRECONDICIÓN: <Default>*/
+    while(puedeMover(dir) && esCasilleroAl_(dir)){
+        Mover(dir)
+    }
+}
+//*------------------------------------------------------*
+//╔══════════════════════════════════════════════════════╗
+//║2.2.Guardar en el tablero-----------------------------║
+//╚══════════════════════════════════════════════════════╝
+//*------------------------------------------------------*
+//-ActualizarFicha
+//  -ActualizarTipo
+//      -númeroDeTipo
+//  -ActualizarDaño
+//  -ActualizarAux
+//  -ActualizarEfecto
+//
+//-ActualizarPersonaje_MirandoAl_
+//  -PonerPjMirandoAl_
+//  -ActualizarPersonaje
+//      -ActualizarEstado
+//          -lEstALNúmero
+//              -númeroDeEstado
+//    -ActualizarHabilidad
+//          -lHabALNúmero
+//              -númeroDeHabilidad
+//          -códigoDePrimerHabilidad
+//    -ActualizarVidaYArmadura
+//          -ActualizarVida
+//          -ActualizarMaxVida
+//          -ActualizarArmadura
+//          -ActualizarMaxArmadura
+//
+//-ActualizarPuntaje
+//-ActualizarMsj
+//-ActualizarVisualDeEstados
+//  -códigoDeEstados
+//*------------------------------------------------------*
+procedure ActualizarFicha_Al_(f, dir){
+    /*PROPÓSITO: Actualiza la ficha dada en el casillero adyacente
+    en la dirección dada.
+    PRECONDICIÓN: 
+        *Hay un casillero adyacente en la dirección dada.
+        *<default>
+    PARÁMETROS: f es una Ficha, dir es una Dirección.*/
+    Mover(dir)
+    ActualizarFicha(f)
+    Mover(opuesto(dir))
+}
+
+procedure ActualizarFicha(ficha){
+    /*PROPÓSITO: Guarda en el tablero la representación correspondiente
+    a la ficha dada.
+    PRECONDICIÓN: <default> y el cabezal se encuentra en un casillero vacio
+    o con ficha a actualizar.
+    PARÁMETRO: ficha es una Ficha.*/
+    ActualizarTipo(tipo(ficha))
+    ActualizarDaño(daño(ficha))
+    ActualizarAux(aux(ficha))
+    ActualizarEfecto(efecto(ficha))
+}
+//--------------------------------------------------------
+procedure ActualizarTipo(tipo){
+    /*PROPÓSITO: Guarda en el casillero actual la representación corresponeinte
+    al tipo dado.
+    PRECONDICIÓN: <default> y el cabezal se encuentra en un casillero vacio o con
+    ficha a actualizar.
+    PARÁMETRO: tipo es una TipoDeFicha.*/
+    Poner_ParaQueHaya_(Negro, númeroDeTipo(tipo))
+}
+
+function númeroDeTipo(tipo){
+    /*PROPÓSITO: Describe el número de orden correspondiente al tipo de 
+    ficha dado.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETRO: tipo es un TipoDeFicha.*/
+    c := 2 //2 corresponde a Enemigo
+    tipoActual := minTipo()
+    while (not(tipoActual == maxTipo()) && not(tipoActual == tipo)){
+        c := c + 1
+        tipoActual := sigTipo(tipoActual)
+    }
+    return(c)
+}
+//--------------------------------------------------------
+procedure ActualizarDaño(n){
+    /*PROPÓSITO: Guarda en el casillero actual la representación corresponeinte
+    al daño dado.
+    PRECONDICIÓN: <default> y el cabezal se encuentra en un casillero vacio
+    o con ficha a actualizar.
+    PARÁMETRO: n es un Número correspondiente al daño a representar.*/
+    Poner_ParaQueHaya_(Rojo,n)
+}
+
+procedure ActualizarAux(b){
+    /*PROPÓSITO: Guarda en el casillero actual la representación corresponeinte
+    al auxiliar(booleano que decide si daña o cura).
+    PRECONDICIÓN: <default> y el cabezal se encuentra en un casillero vacio
+    o con ficha a actualizar.
+    PARÁMETRO: b es un Booleano correspondiente al aux a representar.*/
+    if (b){
+        Poner_ParaQueHaya_(Verde,1)
+    }else{
+        SacarTodas_(Verde)
+    }
+}
+
+procedure ActualizarEfecto(n){
+    /*PROPÓSITO: Guarda en el casillero actual la representación corresponeinte
+    al efecto dado.
+    PRECONDICIÓN: <default> y el cabezal se encuentra en un casillero vacio o con
+    ficha a actualizar.
+    PARÁMETRO: n es un Número correspondiente al efecto a representar.*/
+    Poner_ParaQueHaya_(Azul,n)
+}
+//--------------------------------------------------------
+procedure ActualizarPersonaje_MirandoAl_(pj, dir){
+    /*PROPÓSITO: Guarda en el tablero la representación correspondiente
+    al personaje dado y la representación correspondiente a la imagen
+    de la dirección del personaje dada.
+    PRECONDICIÓN: <default> y el personaje se encuentra en el casillero actual.
+    PARÁMETRO: pj es un Personaje, dir es una Dirección.*/
+    ActualizarPersonaje(pj)
+    PonerPjMirandoAl_(dir)
+}
+
+procedure PonerPjMirandoAl_(dir){
+    /*PROPÓSITO: Actualiza la animación del personaje hacia la dirección
+    dada.
+    PRECONDICIÓN: <default> y la celda actual es del personaje.
+    PARÁMETRO: dir es una Dirección.*/
+    Poner_ParaQueHaya_(Verde,direcciónANúmero(dir))
+}
+
+procedure ActualizarPersonaje(pj){
+    /*PROPÓSITO: Guarda en el tablero la representación correspondiente
+    al personaje dado.
+    PRECONDICIÓN: <default> el personaje se encuentra en el casillero actual.
+    PARÁMETRO: pj es un Personaje.*/
+    ActualizarEstado(listaEstados(estadosActivos(pj)),listaTurnos(estadosActivos(pj)))
+    ActualizarVisualDeEstados(listaEstados(estadosActivos(pj)))
+    ActualizarHabilidad(listaHabilidades(pj))
+    ActualizarVidaYArmadura(vida(pj),maxVida(pj),armadura(pj),maxArmadura(pj))
+    Poner_ParaQueHaya_(Negro,1)
+}
+//--------------------------------------------------------
+procedure ActualizarEstado(lEstados, lTurnos){
+    /*PROPÓSITO: Guarda en el tablero la representación correspondiente
+    a las listas de estados y turnos dada.
+    PRECONDICIÓN: <default>
+        *lEstados y lTurnos tienen la misma cantidad de elementos.
+        *lTurnos no debe tener un elemento que valga 0.(se podría perder
+        de ser primer elemento)
+        *El personaje se encuentra en el casillero actual.
+    PARÁMETRO: lEstados es una Lista de estados, lTurnos es una lista de
+    Números.*/
+    Poner_ParaQueHaya_(Rojo,listaANúmero(lEstALNúmero(lEstados),cantEstados()))
+    Poner_ParaQueHaya_(Azul,listaANúmero(lTurnos,4))
+}
+
+function lEstALNúmero(lista){
+    /*PROPÓSITO: Transforma la lista dada en una Lista de Números con los
+    valores correspondiente al orden la cada estado.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETRO: lista es una Lista de Estados.
+    RESULTADO: Una Lista de Números.
+    OBSERVACIÓN: Es un recorrido de transformación sobre la lista dada.*/
+    l := []
+    foreach elemento in lista {
+        l := l ++ [númeroDeEstado(elemento)]
+    }
+    return(l)
+}
+
+function númeroDeEstado(est){
+    /*PROPÓSITO: Describe el número que se corresponde al Estado dado.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETRO: est es un Estado.
+    RESULTADO: Un Número.
+    OBSERVACIÓN: Se realiza un recorrido de busqueda contando.*/
+    c := 0
+    estadoActual := minEstado()
+    while(not(estadoActual == maxEstado()) && not(estadoActual == est)){
+        c := c + 1
+        estadoActual := sigEstado(estadoActual)
+    }
+    return(c)
+}
+
+//--------------------------------------------------------
+procedure ActualizarHabilidad(lista){
+    /*PROPÓSITO: Guarda en el tablero la representación correspondiente
+    a la lista de habilidades dada.
+    PRECONDICIÓN: <default>
+    PARÁMETRO: lista es una Lista de Habilidades.*/
+    co := coordenadaActual()
+    IrACH()
+    Poner_ParaQueHaya_(Verde,longitudDe_(lista))
+    Poner_ParaQueHaya_(Rojo,listaANúmero(lHabALNúmero(lista),cantHab()))
+    Poner_ParaQueHaya_(Azul,códigoDePrimerHabilidad(lista))
+    IrACoordenada(co)
+}
+
+function códigoDePrimerHabilidad(l){
+    /*PROPÓSITO: Describe un número que se corresponde a la representación
+    de la imagen de la primer habilidad que tiene el personaje, si hay o 0.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETRO: lista es una Lista de Habilidades.
+    RESULTADO: Un Número*/
+    return(choose primero(lHabALNúmero(l))+1 when (not (esVacía(l)))
+                    0 otherwise)
+}
+
+function lHabALNúmero(lista){
+    /*PROPÓSITO: Transforma la lista dada en una Lista de Números con los
+    valores correspondiente al orden la cada habilidad.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETRO: lista es una Lista de Habilidades.
+    RESULTADO: Una Lista de Números.
+    OBSERVACIÓN: Es un recorrido de transformación sobre la lista dada.*/
+    l := []
+    foreach elemento in lista {
+        l := l ++ [númeroDeHabilidad(elemento)]
+    }
+    return(l)
+}
+
+function númeroDeHabilidad(hab){
+    /*PROPÓSITO: Describe el número que se corresponde a la habilidad dada.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETRO: hab es una Habilidad.
+    RESULTADO: Un Número.
+    OBSERVACIÓN: Se realiza un recorrido de busqueda contando.*/
+    c := 0
+    habActual := minHabilidad()
+    while(not(habActual == maxHabilidad()) && not(habActual == hab)){
+        c := c + 1
+        habActual := sigHabilidad(habActual)
+    }
+    return(c)
+}
+//--------------------------------------------------------
+procedure ActualizarVidaYArmadura(vida,maxVida,armadura,maxArmadura){
+    /*PROPÓSITO: Guarda en el tablero la representación correspondiente
+    a la vida, maxvida, armadura y maxarmadura dadas.
+    PRECONDICIÓN: <default>
+        *vida debe ser menor a maxVida.
+        *armadura debe ser menor a maxArmadura.
+    PARÁMETROS: Todos los parámetros son Números.*/
+    co := coordenadaActual()
+    IrACVYA()
+    ActualizarVida(vida)
+    ActualizarMaxVida(maxVida)
+    ActualizarArmadura(armadura)
+    ActualizarMaxArmadura(maxArmadura)
+    IrACoordenada(co)
+}
+
+procedure ActualizarVida(n){
+    /*PROPÓSITO: Guarda en el tablero la representación correspondiente
+    a la vida dada.
+    PRECONDICIÓN: <default> y el cabezal se encuentra en CVYA.
+    PARÁMETRO: n es un Número.*/
+    Poner_ParaQueHaya_(Rojo,n)
+}
+procedure ActualizarMaxVida(n){
+    /*PROPÓSITO: Guarda en el tablero la representación correspondiente
+    a la maxVida dada.
+    PRECONDICIÓN: <default> y el cabezal se encuentra en CVYA.
+    PARÁMETRO: n es un Número.*/
+    Poner_ParaQueHaya_(Verde,n)
+}
+procedure ActualizarArmadura(n){
+    /*PROPÓSITO: Guarda en el tablero la representación correspondiente
+    a la armadura dada.
+    PRECONDICIÓN: <default> y el cabezal se encuentra en CVYA.
+    PARÁMETRO: n es un Número.*/
+    Poner_ParaQueHaya_(Azul,n)
+}
+procedure ActualizarMaxArmadura(n){
+    /*PROPÓSITO: Guarda en el tablero la representación correspondiente
+    a la maxArmadura dada.
+    PRECONDICIÓN: <default> y el cabezal se encuentra en CVYA.
+    PARÁMETRO: n es un Número.*/
+    Poner_ParaQueHaya_(Negro,n+10)
+}
+//--------------------------------------------------------
+procedure ActualizarPuntaje(n){
+    /*PROPÓSITO: Guarda en el tablero el valor del puntaje dado.
+    PRECONDICIÓN: <default>
+    PARÁMETRO: n es un Número que representa el puntaje a actualizar.*/
+    co := coordenadaActual()
+    IrAPuntaje()
+    Poner_ParaQueHaya_(Azul,n)
+    IrACoordenada(co)
+}
+//--------------------------------------------------------
+procedure ActualizarMsj(ficha, pj){
+    /*PROPÓSITO: Guarda en el tablero la representación del mensaje dado.
+    PRECONDICIÓN: <default>
+    PARÁMETRO: ficha es una Ficha, pj es una Personaje.*/
+    co := coordenadaActual()
+    IrAMsj()
+    Poner_ParaQueHaya_(Rojo,códigoMsj(ficha,pj))
+    IrACoordenada(co)
+}
+
+function códigoMsj(f,p){
+    /*PROPÓSITO: Describe un valor númerico que se corresponde a la
+    representación del mensaje obtenido de la ficha y el personaje
+    dados.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETRO: f es una Ficha, p es un Personaje.*/
+    return(choose 1 when (vida(p) <= 0)    //MUERTO x
+                2 when (tipo(f) == Cofre)//COFRE ABIERTO x
+                3 when (efecto(f) == 1)//ENVENENA x
+                4 when (efecto(f) == 2)//DEBILITA x
+                5 when (efecto(f) == 3)//REGENERA x
+                6 when (efecto(f) == 4)//FORTALECIDO x
+                7 when (tipo(f) == Enemigo)//PELEASTE x
+                8 when (efecto(f) == 15) //+ armadura
+                9 when (efecto(f) == 14) //+ max vida
+                10 when (efecto(f) == 13)//+ max armadura
+                11 when (efecto(f) == 9 || efecto(f) == 10 || efecto(f) == 11 || efecto(f) == 12)
+                //^habilidad
+                12 when (efecto(f) == 7) //antidoto
+                13 when (aux(f)) //te curaste
+                14 when (tipo(f) == Trampa) //daño
+                15 otherwise  //desconocido
+    )
+}
+//--------------------------------------------------------
+procedure ActualizarVisualDeEstados(l){
+    /*PROPÓSITO: Guarda en el tablero la representación visual de los
+    estados activos en el personaje.
+    PRECONDICIÓN: <default>
+    PARÁMETROS: l es una Lista de Estados que son los que tiene el
+    personaje actualmente.*/
+    co := coordenadaActual()
+    IrAVisualDeEstados()
+    Poner_ParaQueHaya_(Azul, códigoDeEstados(
+                                lista_Ordenada(
+                                    sinRepetidos_(lEstALNúmero(l))
+                                )
+                            )
+                        )
+    IrACoordenada(co)    
+}
+
+function códigoDeEstados(l){
+    /*PROPÓSITO: Describe el código de la representación visual de
+    los estados que tiene el personaje.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETROS: l es una Lista de Números ordenados de menor a mayor
+    y sin repetir.
+    OBSERVACIÓN: La solución propuesta a este problema es pesima
+    ya que enlisto toda las combinaciones posibles, no se me ocurrió
+    mejor modo :(.*/
+    return(choose
+            16 when  (l==[0,1,2,3])
+            15 when (l==[1,2,3])
+            14 when (l==[0,2,3])
+            13 when (l==[0,1,3])
+            12 when (l==[0,1,2])
+            11 when (l==[2,3])
+            10 when (l==[1,3])
+            9 when (l==[1,2])
+            8 when (l==[0,3])
+            7 when (l==[0,2])
+            6 when (l==[0,1])
+            5 when (l==[3])
+            4 when (l==[2])
+            3 when (l==[1])
+            2 when (l==[0])
+            1 otherwise
+    )
+}
+//*------------------------------------------------------*
+//╔══════════════════════════════════════════════════════╗
+//║2.3.Generación de tablero-----------------------------║
+//╚══════════════════════════════════════════════════════╝
+//*------------------------------------------------------*
+//-NuevaPartida <- Inicializo una nueva partida
+//  -CrearCasilleros
+//  -CrearPuntaje
+//  -CrearCH
+//  -CrearCVYA
+//  -CrearPersonaje
+//  -CrearTítulo
+//  -CrearMarcos
+//*------------------------------------------------------*
+procedure NuevaPartida() {
+    VaciarTableroMenosSemilla()
+    CrearMarcos()
+    CrearTítulo()
+    CrearPuntaje()
+    CrearCH()
+    CrearCVYA()
+    CrearCasilleros()
+    CrearPersonaje()
+}
+//--------------------------------------------------------
+procedure CrearMarcos(){
+    
+    /*PROPÓSITO: Poner los bordes estéticos de la pantalla.
+    PRECONDICIÓN: Hay un tablero de al menos 7x9.*/
+    
+    PonerMarcoDePantallaPrincipal()
+    PonerMarcoDeDatos()
+    
+    PonerOscuridades()
+    
+}
+
+procedure PonerMarcoDePantallaPrincipal(){
+    
+    /*PROPÓSITO: Poner los bordes estéticos de la pantalla principal.
+    PRECONDICIÓN: Hay un tablero de al menos 7x9*/
+    
+    IrAEsquinaSurOeste()
+    PonerEsq__(Sur, Oeste)
+    Mover(Norte)
+    PonerColumna_DeAlto_(Oeste, 5)
+    Mover(Este)
+    PonerTechoDeAncho_(5)
+    IrAlBorde(Sur)
+    Mover(Este)
+    PonerEsq__(Sur, Este)
+    Mover(Norte)
+    PonerColumna_DeAlto_(Este, 5)
+    IrAEsquinaSurOeste()
+    Mover(Este)
+    PonerPisoDeAncho_(5)
+}
+
+procedure PonerMarcoDeDatos(){
+    
+    /*PROPÓSITO: Poner los bordes estéticos de la pantalla de datos.
+    PRECONDICIÓN: Hay un tablero de al menos 7x9*/
+    
+    IrAPuntaje()
+    Mover(Oeste)
+    PonerColumna_DeAlto_(Oeste, 3)
+    Mover(Este)
+    PonerTechoDeAncho_(3)
+    IrACVYA()
+    Mover(Este)
+    PonerColumna_DeAlto_(Este, 3)
+}
+
+procedure PonerColumna_DeAlto_(dir, n){
+    
+    /*PROPÓSITO: Poner una columna mirando hacia la dirección dada
+    y del alto dado.
+    PRECONDICIÓN: hay n celdas al Norte.
+    PARÁMETROS: n es un Número mayor a 0. dir es una Dirección Este u Oeste*/
+    
+    repeat(n-1){
+        PonerMuro_(dir)
+        Mover(Norte)
+    }
+    PonerEsq__(Norte, dir)
+}
+
+procedure PonerMuro_(dir){
+    
+    /*PROPÓSITO: Poner un muro mirando en la dirección dada en la celda actual.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETRO: dir es una Dirección Este u Oeste.*/
+    
+    Poner(Verde)
+    Poner(Azul)
+    if(dir == Este){
+        Poner(Azul)
+    }
+}
+
+procedure PonerEsq__(dir1, dir2){
+    
+    /*PROPÓSITO: Poner una esquina mirando en la dirección dada en la celda actual.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETRO: dir1 es una Dirección Norte o Sur, dir2 es una dirección Este u Oeste.*/
+    
+    Poner__Veces(Verde,2)
+    Poner(Azul)
+    if(dir1 == Norte){
+        Poner(Azul)
+    }
+    if(dir2 == Este){
+        Poner(Verde)
+    }
+}
+
+procedure PonerTechoDeAncho_(n){
+    
+    /*PROPÓSITO: Pone un techo del ancho dado hacia el este desde la celda actual.
+    PRECONDICIÓN: Hay n celdas hacia el este.
+    PARÁMETRO: n es un número mayor a 0.*/
+    
+    repeat(n-1){
+        Poner__Veces(Verde, 4)
+        Poner(Azul)
+        Mover(Este)
+    }
+    Poner__Veces(Verde, 4)
+    Poner(Azul)
+}
+
+procedure PonerPisoDeAncho_(n){
+
+    /*PROPÓSITO: Pone un piso del ancho dado hacia el este desde la celda actual.
+    PRECONDICIÓN: Hay n celdas hacia el este.
+    PARÁMETRO: n es un número mayor a 0.*/
+
+    repeat(n-1){
+        Poner__Veces(Verde, 5)
+        Poner(Azul)
+        Mover(Este)
+    }
+    Poner__Veces(Verde, 5)
+    Poner(Azul)
+}
+
+procedure PonerOscuridades(){
+    
+    IrAEsquinaSurOeste()
+    IrAlBorde(Norte)
+    PonerOscuridad()
+    IrAlBorde(Este)
+    PonerOscuridad()
+}
+
+procedure PonerOscuridad(){
+    
+    repeat(3){
+        Poner__Veces(Verde, 6)
+        Poner(Azul)
+        Mover(Sur)
+    }
+    Mover__Veces(Norte, 3)
+}
+
+//--------------------------------------------------------
+procedure CrearCasilleros(){
+    IrAPrimerCasillero()
+    while (not(esÚltimoCasillero())){
+        AgregarFicha()
+        PasarAlSiguienteCasillero()
+    }
+    AgregarFicha()
+}
+//--------------------------------------------------------
+procedure CrearTítulo(){
+    IrAVisualDeEstados()
+    Poner(Azul)
+}
+//--------------------------------------------------------
+procedure CrearPuntaje(){
+    /*PROPÓSITO: Coloca un personaje nuevo en la celda inicial del juego.
+    PRECONDICIÓN: <Default>
+        *No hay personaje en el tablero.
+        *Hay un tablero valido nuevo creado.*/
+    IrAPuntaje()
+    Poner__Veces(Negro, 8)
+}
+//--------------------------------------------------------
+procedure CrearCH(){
+    /*PROPÓSITO: Coloca un personaje nuevo en la celda inicial del juego.
+    PRECONDICIÓN: <Default>
+        *No hay personaje en el tablero.
+        *Hay un tablero valido nuevo creado.*/
+        
+    IrACH()
+    Poner__Veces(Negro, 9)
+}
+//--------------------------------------------------------
+procedure CrearCVYA(){
+    /*PROPÓSITO: Crea la CVYA en base a su representación.
+    PRECONDICIÓN: <Default>
+        *No hay CVYA.*/
+        
+    IrACVYA()
+    Poner__Veces(Negro, 10)
+}
+//--------------------------------------------------------
+procedure CrearPersonaje(){
+    /*PROPÓSITO: Coloca un personaje nuevo en la celda inicial del juego.
+    PRECONDICIÓN: <Default>
+        *No hay personaje en el tablero.
+        *Hay un tablero valido nuevo creado.*/
+    IrAPrimerCasillero()
+    Mover__Veces(Este,2)
+    QuitarFicha()
+    ActualizarPersonaje_MirandoAl_(
+        Personaje(
+            vida <- 10,
+            maxVida <- 10,
+            armadura <- 0,
+            maxArmadura <- 8,
+            listaHabilidades <- [],
+            estadosActivos <- EstadosActuales(listaEstados <- [], 
+                                              listaTurnos <- [])
+            ),
+        Norte
+        )
+}
+//*------------------------------------------------------*
+//╔══════════════════════════════════════════════════════╗
+//║2.4.Generación de fichas------------------------------║
+//╚══════════════════════════════════════════════════════╝
+//*------------------------------------------------------*
+//-AgregarFicha
+//  -crearVacia()
+//  -crearEgg()
+//      -noHayEgg()
+//      -crearNovaOHelado()
+//      -nova()
+//      -helado()
+//  -crearEnemigo()
+//  -crearObjeto()
+//  -crearCofre()
+//  -crearHabilidad()
+//  -crearTrampa()
+//*------------------------------------------------------*
+procedure AgregarFicha(){
+    /*PROPÓSITO: Agrega una ficha aleatoria al casillero actual.
+    PRECONDICIÓN: El casillero debe estar vacio.*/
+    ActualizarSemilla() //genera nueva semilla
+    switch(randomConMaximo(79999,semillaActual()) div 10000) to {
+            7 -> {ActualizarFicha(crearObjeto())}
+            6 -> {ActualizarFicha(crearTrampa())}
+            5 -> {ActualizarFicha(crearEnemigo())}
+            4 -> {ActualizarFicha(crearHabilidad())}
+            3 -> {ActualizarFicha(crearCofre())}
+            2 -> {ActualizarFicha(crearEgg())}
+            _ -> {ActualizarFicha(crearVacia())}
+    }
+}
+
+function crearVacia(){
+    /*PROPÓSITO: Describe una ficha vacía.
+    PRECONDICIÓN: Ninguna.
+    RESULTADO: Una Ficha.*/
+    return(
+        Ficha(
+            daño <- 0,
+            efecto <- 0,
+            tipo <- FichaVacia,
+            aux <- False
+            )
+          )
+}
+function crearEgg(){
+    /*PROPÓSITO: Describe un easter egg.
+    PRECONDICIÓN: Ninguna.
+    RESULTADO: Una Ficha.*/
+    return(choose
+        crearNovaOHelado() when (leerPuntaje() > 20 && noHayEgg())
+        crearEnemigo() otherwise)
+}
+
+function noHayEgg(){
+    /*PROPÓSITO: Indica si hay un easter egg en el tablero.
+    PRECONDICIÓN: <Default>
+    RESULTADO: Un Booleano.
+    OBSERVACIÓN: Se realiza un recorrido de busqueda sobre el tablero.*/
+    IrAPrimerCasillero()
+    f := leerFicha()
+    while(not esÚltimoCasillero() 
+        && not (efecto(f) == 16 || efecto(f) == 17)){
+        PasarAlSiguienteCasillero()
+        f := leerFicha()
+    }
+    return(not(efecto(f) == 16 || efecto(f) == 17))
+}
+
+function crearNovaOHelado(){
+    /*PROPÓSITO: Describe a Nova o a un Helado de frutilla.
+    PRECONDICIÓN: Ninguna.
+    RESULTADO: Una Ficha.*/
+    v := randomConMaximo(99999, semillaActual())
+    ActualizarSemilla()
+    return(choose nova() when (v < 75000)
+            helado() otherwise)
+}
+
+function nova(){
+    /*PROPÓSITO: Describe a Nova.
+    PRECONDICIÓN: Ninguna.
+    RESULTADO: Una Ficha.*/
+    return(
+        Ficha(
+            daño <- 0,
+            efecto <- 16,
+            tipo <- Enemigo,
+            aux <- False
+            )
+        )
+}
+
+function helado(){
+    /*PROPÓSITO: Describe un Helado.
+    PRECONDICIÓN: Ninguna.
+    RESULTADO: Una Ficha.*/
+    return(
+        Ficha(
+            daño <- 0,
+            efecto <- 17,
+            tipo <- Enemigo,
+            aux <- False
+            )
+        )
+}
+
+function crearEnemigo(){
+    /*PROPÓSITO: Describe una Ficha de TipoDeFicha Enemigo al azar.
+    PRECONDICIÓN: Ninguna.
+    RESULTADO: Una Ficha de TipoDeFicha Enemigo al azar.
+    OBSERVACIÓN: Es mas probable que se genere un enemigo
+    que otro.*/
+    ActualizarSemilla()
+    v := randomConMaximo(99999, semillaActual())
+    return(choose
+                Ficha( //Esqueleto Soldado
+                    tipo <- Enemigo,
+                    daño <- 2,
+                    efecto <- 6,
+                    aux <- False
+                    )
+                when(v < 25000)
+                Ficha( //Ojo maligno
+                    tipo <- Enemigo,
+                    daño <- 2,
+                    efecto <- 5,
+                    aux <- False
+                    )
+                when(v < 45000)
+                Ficha( //Goblin
+                    tipo <- Enemigo,
+                    daño <- 4,
+                    efecto <- 0,
+                    aux <- False
+                    )
+                when(v < 65000)
+                Ficha( //Hongo Toxico
+                    tipo <- Enemigo,
+                    daño <- 3,
+                    efecto <- 1,
+                    aux <- False
+                    )
+                when(v < 85000)
+                Ficha( //Espectro
+                    tipo <- Enemigo,
+                    daño <- 4,
+                    efecto <- 2,
+                    aux <- False
+                    )
+                otherwise
+    )
+}
+
+function crearObjeto(){
+    /*PROPÓSITO: Describe una Ficha de TipoDeFicha Enemigo al azar.
+    PRECONDICIÓN: Ninguna.
+    RESULTADO: Una Ficha de TipoDeFicha Enemigo al azar.
+    OBSERVACIÓN: Es mas probable que se genere un enemigo
+    que otro.*/
+    ActualizarSemilla()
+    v := randomConMaximo(99999, semillaActual())
+    return(choose
+                Ficha( //Escudo
+                    tipo <- Objeto,
+                    daño <- 3,
+                    efecto <- 15,
+                    aux <- True
+                    )
+                when(v < 14500)
+                Ficha( //Casco
+                    tipo <- Objeto,
+                    daño <- 5,
+                    efecto <- 15,
+                    aux <- True
+                    )
+                when(v < 27000)
+                Ficha( //Pocion
+                    tipo <- Objeto,
+                    daño <- 5,
+                    efecto <- 0,
+                    aux <- True
+                    )
+                when(v < 39500)
+                Ficha( //Antidoto
+                    tipo <- Objeto,
+                    daño <- 0,
+                    efecto <- 7,
+                    aux <- False
+                    )
+                when(v < 51000)
+                Ficha( //Pocion regeneracion
+                    tipo <- Objeto,
+                    daño <- 2,
+                    efecto <- 3,
+                    aux <- True
+                    )
+                when(v < 63500)
+                Ficha( //Armadura
+                    tipo <- Objeto,
+                    daño <- 5,
+                    efecto <- 13,
+                    aux <- True
+                    )
+                when(v < 76000)
+                Ficha( //Pocion fortaleza
+                    tipo <- Objeto,
+                    daño <- 1,
+                    efecto <- 4,
+                    aux <- True
+                    )
+                when(v < 88500)
+                Ficha( //Elixir
+                    tipo <- Objeto,
+                    daño <- 8,
+                    efecto <- 14,
+                    aux <- True
+                    )
+                otherwise
+    )
+}
+
+function crearHabilidad(){
+    /*PROPÓSITO: Describe una Ficha de TipoDeFicha Habilidad al 
+    azar.
+    PRECONDICIÓN: Ninguna.
+    RESULTADO: Una Ficha de TipoDeFicha Habilidad.*/
+    v := randomConMaximo(99999, semillaActual())
+    ActualizarSemilla()
+    return(choose
+            Ficha(//Desplazamiento
+                tipo <- Habilidad,
+                daño <- 0,
+                efecto <- 9,
+                aux <- False
+            )
+            when (v < 25000)
+            Ficha(//Golpe
+                tipo <- Habilidad,
+                daño <- 0,
+                efecto <- 10,
+                aux <- False
+            )
+            when (v < 50000)
+            Ficha(//Transformar
+                tipo <- Habilidad,
+                daño <- 0,
+                efecto <- 11,
+                aux <- False
+            )
+            when (v < 75000)
+            Ficha(//Impacto Electrico
+                tipo <- Habilidad,
+                daño <- 0,
+                efecto <- 12,
+                aux <- False
+            )
+            otherwise
+    )
+}
+
+function crearCofre(){
+    /*PROPÓSITO: Describe una Ficha de TipoDeFicha Habilidad al 
+    azar.
+    PRECONDICIÓN: Ninguna.
+    RESULTADO: Una Ficha de TipoDeFicha Habilidad.*/
+    return(
+        Ficha(
+                tipo <- Cofre,
+                daño <- 0,
+                efecto <- 8,
+                aux <- False
+            )
+    )
+}
+
+function crearTrampa(){
+    /*PROPÓSITO: Describe una Ficha de TipoDeFicha Trampa al azar.
+    PRECONDICIÓN: Ninguna.
+    RESULTADO: Una Ficha de TipoDeFicha Trampa.*/
+    v := randomConMaximo(100000,semillaActual())
+    ActualizarSemilla()
+    return(choose
+            Ficha(//nada
+                tipo <- Trampa,
+                daño <- 1,
+                efecto <- 0,
+                aux <- False
+            )
+            when (v < 25000)
+            Ficha(//explosivo
+                tipo <- Trampa,
+                daño <- 3,
+                efecto <- 0,
+                aux <- False
+            )
+            when (v < 50000)
+            Ficha(//veneno
+                tipo <- Trampa,
+                daño <- 0,
+                efecto <- 1,
+                aux <- False
+            )
+            when (v < 75000)
+            Ficha(//pinches
+                tipo <- Trampa,
+                daño <- 2,
+                efecto <- 0,
+                aux <- False
+            )
+            when (v < 100000)
+            Ficha(//algo
+                tipo <- Trampa,
+                daño <- 0,
+                efecto <- randomConMaximo(4,semillaActual()),
+                aux <- False
+            )
+            otherwise
+    )
+}
+
+//*------------------------------------------------------*
+//╔══════════════════════════════════════════════════════╗
+//║2.5.Quitar de tablero---------------------------------║
+//╚══════════════════════════════════════════════════════╝
+//*------------------------------------------------------*
+//-VaciarTableroMenosSemilla
+//-QuitarFicha
+//-QuitarPersonaje
+//*------------------------------------------------------*
+procedure VaciarTableroMenosSemilla(){
+    /*PROPÓSITO: Quitar todas las bolitas del teblero excepto las
+    rojas correspondientes a la semilla.
+    PRECONDICIÓN: Ninguna.*/
+    IrAPuntaje()
+    if(not esPuntaje()) { //si no esta marcada, hay que marcarla
+        CrearPuntaje()
+    }
+    IniciarRecorrido()
+    while(not esÚltimaCelda()){
+        if(not esPuntaje()){
+            VaciarCelda()
+        }else{//es puntaje, conservo semilla
+            SacarTodas_(Azul)
+            SacarTodas_(Verde)
+            SacarTodas_(Negro)
+        }
+        PasarALaSiguienteCelda()
+    }
+    VaciarCelda() //nunca puede ser puntaje por la estructura del tablero
+}
+//--------------------------------------------------------
+procedure QuitarFicha(){
+    if(esCasillero()) {VaciarCelda()}
+}
+//--------------------------------------------------------
+procedure QuitarPersonaje(){
+    if(esPersonaje()){VaciarCelda()}
+}
+//*------------------------------------------------------*
+//╔══════════════════════════════════════════════════════╗
+//║======================================================║
+//║-----------------MECANICAS DEL JUEGO------------------║
+//║======================================================║
+//╚══════════════════════════════════════════════════════╝
+//*------------------------------------------------------*
+//MoverPersonaje
+//  TransformarCofreAl_
+//  InteractuarAl_
+//	    Pj_ConDañoOCuraDe_
+//  	aumentarArmadura
+//  	curar
+//  	pj_RecibeDaño_
+//  	daño_ModEstado
+//  	pj_ConEstadosActualizados
+//  	pj_ConVidaActualizadaPorEstados
+//  	pj_ConEfectosDe_
+//  	sinEstadosNegativos
+//  	agregarEstado
+//
+//DesplazarCasillerosHacia_
+//
+//UsarHabilidad
+//  UsarDesplazamiento
+//  UsarGolpe
+//  UsarTransformar
+//  UsarHechizo
+//      DañarPorHechizosSi
+//
+//QuitarHabilidad
+//*------------------------------------------------------*
+procedure QuitarHabilidad(){
+    /*PROPÓSITO: Quita la primer habilidad que tenga el personaje
+    actualmente, si tiene.
+    PRECONDICIÓN: <Default>*/
+    habs := leerListaHabilidadActual()
+    if (not esVacía(habs)){
+        habs := resto(habs)
+    }
+    ActualizarHabilidad(habs)
+}
+
+procedure UsarHabilidad(dir){
+    /*PROPÓSITO: Usa la primer habilidad que tenga el personaje
+    en la dirección correspondiente.
+    PRECONDICIÓN: <Default>
+    PARÁMETROS: dir es una Dirección.*/
+    if (not esVacía(leerListaHabilidadActual())) {
+        switch(primero(leerListaHabilidadActual())) to {
+            Desplazamiento -> {UsarDesplazamiento(dir)}
+            Golpe -> {UsarGolpe(dir)}
+            Transformar -> {UsarTransformar(dir)}
+            _ -> {UsarHechizo()}
+        }
+        QuitarHabilidad()
+        PonerPjMirandoAl_(dir)
+    }
+}
+
+procedure UsarDesplazamiento(dir){
+    /*PROPÓSITO: Desplaza al personaje al borde de la dirección dada
+    moviendo todas las fichas que haya entre medio.
+    PRECONDICIÓN: <Default>
+    PARÁMETRO: dir es una Dirección.*/
+    pj := leerPersonaje()
+    DesplazarCasillerosHacia_(opuesto(dir))
+    IrAlBordeDelTablero(dir)
+    ActualizarPersonaje_MirandoAl_(pj, dir)
+}
+
+procedure UsarGolpe(dir) {
+    /*PROPÓSITO: Da un golpe a un enemigo adyacente en la dirección dada
+    si lo hay.
+    PRECONDICIÓN: <Default>
+    PARÁMETRO: dir es una Dirección.*/
+    ficha := leerFichaAl_(dir)
+    if (tipo(ficha) == Enemigo) {
+        ficha := Ficha (ficha | daño <- daño(ficha) - 3)
+    }
+    ActualizarFicha_Al_(ficha, dir)
+}
+
+procedure UsarTransformar(dir){
+    /*PROPÓSITO: Transforma a un enemigo adyacente en la dirección dada
+    en una rana, si lo hay.
+    PRECONDICIÓN: <Default>
+    PARÁMETRO: dir es una Dirección.*/
+    ficha := leerFichaAl_(dir)
+    if (tipo(ficha) == Enemigo) {
+        ficha := Ficha ( ficha |
+            daño <- 1,
+            efecto <- 18 //efecto sin uso que sirve 
+                         //para poder diferenciar en la vestimenta
+            )
+    }
+    ActualizarFicha_Al_(ficha, dir)
+}
+
+procedure UsarHechizo(){
+    /*PROPÓSITO: Daña a todos los enemigos en el tablero.
+    PRECONDICIÓN: <Default>*/
+    co := coordenadaActual()
+    IrAPrimerCasillero()
+    while (not (esÚltimoCasillero())){
+        DañarPorHechizoSi()
+        PasarAlSiguienteCasillero()
+    }
+    DañarPorHechizoSi() //caso de borde
+    IrACoordenada(co)
+}
+
+procedure DañarPorHechizoSi(){
+    /*PROPÓSITO: Hace 1 de daño a la ficha en el casillero actual si
+    es un enemigo.
+    PRECONDICIÓN: <default> y el cabezal esta en un casillero.*/
+    if (not esPersonaje()) {
+        f := leerFicha()
+        if (tipo(f) == Enemigo){
+            f := Ficha (f | daño <- daño(f) - 1)
+            ActualizarFicha(f)
+        }
+    }
+}
+
+procedure MoverPersonaje(dir){
+    /*PROPÓSITO: Mover al personaje en la dirección dada hacia un
+    casillero en esa dirección interactuando con la ficha que haya
+    en él. El cabezal terminará junto al personaje en el casillero
+    al que se movió y el personaje mirará en la dirección movida.
+    Finalmente se actualizará el tablero finalizado el movimiento.
+    PRECONDICIÓN: <default>
+        *Hay personaje en la celda actual.
+        *Hay casillero en la celda adyacente en la dirección dada.
+    PARÁMETRO: dir es una dirección.*/
+    //Para mover debe haber personaje en la celda actual
+    //y casillero en la dirección dada que no tenga cofre
+    if(puedeMover(dir)){
+        if(esCasilleroAl_(dir) && not(tipo(leerFichaAl_(dir))==Cofre)){
+            InteractuarAl_(dir)
+        }elseif(Cofre == tipo(leerFichaAl_(dir))){
+            TransformarCofreAl_(dir)
+        }
+    } 
+}
+
+procedure TransformarCofreAl_(dir){
+    /*PROPÓSITO: Abre un cofre en la dirección dada(lo vuelve una trampa
+    o un objeto).
+    PRECONDICIÓN: <default> y hay un cofre en la dirección dada.
+    PARÁMETRO: dir es una Dirección.*/
+    Mover(dir)
+    ActualizarSemilla()
+    if(randomConMaximo(30000,semillaActual()) <= 10000){
+        ActualizarFicha(crearTrampa())
+    }else{
+        ActualizarFicha(crearObjeto())
+    }
+    Mover(opuesto(dir))
+    ActualizarMsj(crearCofre(), leerPersonaje())
+    PonerPjMirandoAl_(dir)
+}
+
+procedure InteractuarAl_(dir){
+    /*PROPÓSITO: Interactúa con el casillero en la dirección dada y
+    mueve al peresonaje a ese casillero y aumenta el puntaje.
+    PRECONDICIÓN: <default>
+        *Hay casillero en la dirección dada y tiene un ficha con la
+        que se puede interactuar (que no sea cofre).
+        *Hay personaje en la celda actual.
+    PARÁMETRO: dir es una Dirección.*/
+    pj := leerPersonaje()
+    ficha := leerFichaAl_(dir)
+    if (vida(pj) > 0){ //si el personaje no esta muerto.
+        pj := pj_ConDañoOCuraDe_(pj, ficha)
+        pj := pj_ConEfectosDe_(pj, ficha)
+        pj := pj_ConEstadosActualizados(pj)
+        DesplazarCasillerosHacia_(dir)
+        if (tipo(ficha) == Enemigo){
+            ActualizarPuntaje(leerPuntaje()+5)
+        }else{
+            ActualizarPuntaje(leerPuntaje()+1)
+        }
+        Mover(dir)
+        ActualizarPersonaje_MirandoAl_(pj, dir)
+        ActualizarMsj(ficha, pj)
+    }
+}
+
+procedure DesplazarCasillerosHacia_(dir){
+    /*PROPÓSITO: Desplaza todos los casilleros en dirección opuesta a la 
+    dada desde la celda actual 1 casillero en la dirección dada y crea
+    una nueva ficha para el casillero del extremo opuesto a la dirección
+    dada.
+    PRECONDICIÓN: <Default>
+    PARÁMETRO: dir es una Dirección.*/
+    co := coordenadaActual()
+    while (puedeMover(opuesto(dir)) && esCasilleroAl_(opuesto(dir))){
+        ficha := leerFichaAl_(opuesto(dir))
+        ActualizarFicha(ficha)
+        Mover(opuesto(dir))
+    }//estoy en un borde
+    AgregarFicha()
+    IrACoordenada(co)
+}
+
+function pj_ConDañoOCuraDe_(pj, f){
+    /*PORPÓSITO: Describe el personaje dado luego de recibir el daño
+    provocado por la ficha dada, o bien, la cura o aumento de la armadura
+    en casos especiales.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETROS: pj es un Personaje. f es una Ficha.
+    RESULTADO: Un Personaje.*/
+    return(choose
+        //casos especiales x efectos o x cura
+        Personaje(pj | armadura <- aumentarArmadura(armadura(pj), maxArmadura(pj), daño(f)))
+        when (efecto(f) == 15)
+        Personaje(pj | maxArmadura <- maxArmadura(pj) + 1,
+                       armadura <- aumentarArmadura(armadura(pj), maxArmadura(pj)+1, daño(f)))
+        when (efecto(f) == 13)
+        Personaje(pj | vida <- curar(vida(pj), maxVida(pj)+1, daño(f)),
+                       maxVida <- maxVida(pj)+1)
+        when (efecto(f) == 14)
+        Personaje(pj | vida <- curar(vida(pj), maxVida(pj), daño(f)))
+        when (aux(f))
+        pj_RecibeDaño_(pj, daño(f)) otherwise
+    )
+}
+
+function aumentarArmadura(arm, max, aumento){
+    /*PROPÓSITO: Describe un Número resultante de sumar la armadura y el
+    aumento dados y que no puede ser mayor a max, o si no max.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETROS: arm, max y aumento son Números.
+    RESULTADO: Un Número.*/
+    return(choose arm+aumento when (arm+aumento < max)
+                max otherwise)
+}
+
+function curar(vida, max, cura){
+    /*PROPÓSITO: Describe un Número resultante de sumar la vida y la 
+    cura y que no puede ser mayor a max, o si no max.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETROS: vida, max y cura son Números.
+    RESULTADO: Un Número.*/
+    return(choose vida+cura when (vida+cura < max)
+                max otherwise)
+}
+
+function pj_RecibeDaño_(pj, daño){
+    /*PROPÓSITO: Describe el personaje dado luego de recibir el daño
+    dado.
+    PRECONDICIÓN: El daño se corresponde a un Ficha que no tiene efectos
+    que curen la vida o alteren el valor de armadura.
+    PARÁMETROS: pj es un Personaje, daño es un Número.
+    RESULTADO: Un Personaje.*/
+    return(choose
+        Personaje(pj | armadura <- armadura(pj) - daño_ModEstado(daño, pj))
+        when (armadura(pj) >= daño_ModEstado(daño, pj))
+        Personaje(pj | vida <- vida(pj) + armadura(pj) - daño_ModEstado(daño, pj),
+                        armadura <- 0)
+        otherwise                        
+    )
+}
+
+function daño_ModEstado(daño, pj){
+    /*PROPÓSITO: Describe el daño modificado por estados que puede tener el
+    personaje dado.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETROS: daño es un Número, pj es un Personaje.
+    RESULTADO: Un Número.*/
+    return(choose daño when (contiene_A_(listaEstados(estadosActivos(pj)), Debilitado)
+                            && contiene_A_(listaEstados(estadosActivos(pj)), Fortalecido))
+                daño+1 when (contiene_A_(listaEstados(estadosActivos(pj)), Debilitado))
+                daño-1 when (contiene_A_(listaEstados(estadosActivos(pj)), Fortalecido))
+                daño otherwise
+    )
+}
+
+function pj_ConEstadosActualizados(pj){
+    /*PROPÓSITO: Describe al pj con los estados actualizados pasado un turno
+    de juego.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETRO: pj es un Personaje.
+    RESULTADO: Un Personaje.*/
+    return(
+        Personaje(
+            pj_ConVidaActualizadaPorEstado(pj) |
+            estadosActivos <- EstadosActuales(
+                    listaEstados <- sinLosNPrimeros(
+                                            listaEstados(
+                                                estadosActivos(pj)),
+                                            cantidadDe_En_(
+                                                0,
+                                                elementosDisminuidosEn1De_(
+                                                    listaTurnos(estadosActivos(pj)))
+                                            )),
+                    listaTurnos <- sinLosNPrimeros(
+                                    elementosDisminuidosEn1De_(
+                                        listaTurnos(estadosActivos(pj))),
+                                    cantidadDe_En_(
+                                                0,
+                                                elementosDisminuidosEn1De_(
+                                                    listaTurnos(estadosActivos(pj)))
+                                            ))
+                )
+            )
+        )
+}
+
+function pj_ConVidaActualizadaPorEstado(pj){
+    /*PROPÓSITO: Describe al Personaje dado con su vida actualizada luego
+    de ser afectado por los Estados Envenenado y Regeneración.
+    PRECONDICIÓN: Ninguna.
+    RESULTADO: Un Personaje.*/
+    return(choose pj when (contiene_A_(listaEstados(estadosActivos(pj)), Envenenado) 
+                        && contiene_A_(listaEstados(estadosActivos(pj)), Regeneración))
+            Personaje(pj | vida <- vida(pj) - 1) when (contiene_A_(listaEstados(estadosActivos(pj)), Envenenado))
+            Personaje(pj | vida <- curar(vida(pj), maxVida(pj), 1)) when (contiene_A_(listaEstados(estadosActivos(pj)), Regeneración))
+            pj otherwise
+        )    
+}
+
+function pj_ConEfectosDe_(pj, ficha){
+    /*PROPÓSITO: Describe al personaje dado luego de ser afectado por el 
+    efecto que causa la ficha dada.
+    PRECONDICIÓN: <default>.
+    RESULTADO: Un Personaje.*/
+    return(choose
+            Personaje(pj |
+                estadosActivos <- agregarEstado(estadosActivos(pj), Envenenado)
+            )
+            when(efecto(ficha) == 1)
+            Personaje(pj |
+                estadosActivos <- agregarEstado(estadosActivos(pj), Debilitado)
+            )
+            when(efecto(ficha) == 2)
+            Personaje(pj |
+                estadosActivos <- agregarEstado(estadosActivos(pj), Regeneración)
+            )
+            when(efecto(ficha) == 3)
+            Personaje(pj |
+                estadosActivos <- agregarEstado(estadosActivos(pj), Fortalecido)
+            )
+            when(efecto(ficha) == 4)
+            Personaje(pj | 
+                estadosActivos <- sinEstadosNegativos(estadosActivos(pj))
+                )
+            when(efecto(ficha) == 7)
+            Personaje(pj |
+                listaHabilidades <- listaHabilidades(pj) ++ [Desplazamiento]
+                )
+            when(efecto(ficha) == 9)
+            Personaje(pj |listaHabilidades <- listaHabilidades(pj) ++ [Golpe]
+                )
+            when(efecto(ficha) == 10)
+            Personaje(pj |listaHabilidades <- listaHabilidades(pj) ++ [Transformar]
+                )
+            when(efecto(ficha) == 11)
+            Personaje(pj |listaHabilidades <- listaHabilidades(pj) ++ [Hechizo]
+                )
+            when(efecto(ficha) == 12)
+            errorNova()
+            when(efecto(ficha) == 16)
+            boom("CHUMBASO: No se pide helado de frutilla.")
+            when(efecto(ficha) == 17)
+            pj otherwise
+        )
+}
+
+function errorNova(){
+    /*PROPÓSITO: Describe de manera aleatoria un mensaje de error
+    causado por nova.
+    PRECONDICIÓN: Ninguna.*/
+    v := randomConMaximo(10000,semillaActual())
+    return(choose
+        boom("Nova se olvido de pasar al siguiente en un recorrido, haz quedado atrapado en un bucle espacio-temporal.")
+        when (v < 1000)
+        boom("Nova puso canicas en vez de bolitas.")
+        when (v < 2000)
+        boom("Nova perdió su brujula y no sabe como Mover(Norte).")
+        when (v < 3000)
+        boom("Nova mezclo su lista de compras con la Lista de Habilidades.")
+        when (v < 4000)
+        boom("Nova perdió su lupa y no puede usar la función observadora del registro.")
+        when (v < 5000)
+        boom("Nova dice que se le rompió la tecla BloqMayus pero creo que no sabe diferenciar una expresión de un comando.")
+        when (v < 6000)
+        boom("Nova contrato a un albañil como constructor del registro.")
+        when (v < 7000)
+        boom("Nova pusó PROPÓSITO: Lo mismo que hacemos todas las noches, Pinky, ¡Tratar de conquistar al mundo!.")
+        when (v < 8000)
+        boom("Nova pensó que la sintaxis del programa era con sujeto y predicado.")
+        when (v < 9000)
+        boom("Les dije que la precondición del programa fuese no contratar a Nova.")
+        otherwise
+    )
+}
+
+function sinEstadosNegativos(estados){
+    /*PROPÓSITO: Describe los EstadosActuales dados sin los estados
+    envenenado y debilitado.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETROS: estados es un EstadosActuales.
+    RESULTADO: Un EstadosActuales.
+    OBSERVACIÓN: Se realiza un recorrido de filtrado sobre el registro
+    dado.*/
+    e := EstadosActuales(listaEstados <- [],listaTurnos <- [])
+    l := listaTurnos(estados)
+    foreach elemento in listaEstados(estados) {
+        if(not (elemento == Envenenado) && not (elemento == Debilitado))
+            {
+            e := 
+                EstadosActuales(
+                    listaEstados <- listaEstados(e) ++ [elemento], 
+                    listaTurnos <- listaTurnos(e) ++ [primero(l)]
+                )
+            }
+        l := resto(l)    
+    }
+    return(e)
+}
+
+function agregarEstado(estadosAnteriores, estado){
+    /*PROPÓSITO: Describe un registro de estados actuales, agregando el
+    estado dado con sus correspondientes turnos de duración al registro
+    dado.
+    PRECONDICIÓN: Ninguna.
+    PARÁMETROS: estadosAnteriores es un EstadosActuales, estado es un Estado.
+    RESULTADO: Un EstadosActuales.*/
+    return(EstadosActuales(listaEstados <- listaEstados(estadosAnteriores) ++ [estado],
+                    listaTurnos <- listaTurnos(estadosAnteriores) ++ [4]
+                    )
+    )
+}
